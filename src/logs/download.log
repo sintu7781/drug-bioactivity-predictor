@@ -1,0 +1,56 @@
+2026-08-19 05:06:06,606 | INFO | __main__ | Fetching records: offset=0
+2026-08-19 05:09:40,298 | INFO | __main__ | Fetching records: offset=0
+2026-08-19 05:09:47,362 | INFO | __main__ | Fetched 1000 / 26600 records
+2026-08-19 05:09:47,362 | INFO | __main__ | Fetching records: offset=1000
+2026-08-19 05:09:52,968 | INFO | __main__ | Fetched 2000 / 26600 records
+2026-08-19 05:09:52,968 | INFO | __main__ | Fetching records: offset=2000
+2026-08-19 05:09:59,748 | INFO | __main__ | Fetched 3000 / 26600 records
+2026-08-19 05:09:59,748 | INFO | __main__ | Fetching records: offset=3000
+2026-08-19 05:10:05,126 | INFO | __main__ | Fetched 4000 / 26600 records
+2026-08-19 05:10:05,126 | INFO | __main__ | Fetching records: offset=4000
+2026-08-19 05:10:10,822 | INFO | __main__ | Fetched 5000 / 26600 records
+2026-08-19 05:10:10,822 | INFO | __main__ | Fetching records: offset=5000
+2026-08-19 05:10:16,988 | INFO | __main__ | Fetched 6000 / 26600 records
+2026-08-19 05:10:16,988 | INFO | __main__ | Fetching records: offset=6000
+2026-08-19 05:10:23,404 | INFO | __main__ | Fetched 7000 / 26600 records
+2026-08-19 05:10:23,404 | INFO | __main__ | Fetching records: offset=7000
+2026-08-19 05:10:28,151 | INFO | __main__ | Fetched 8000 / 26600 records
+2026-08-19 05:10:28,151 | INFO | __main__ | Fetching records: offset=8000
+2026-08-19 05:10:33,030 | INFO | __main__ | Fetched 9000 / 26600 records
+2026-08-19 05:10:33,031 | INFO | __main__ | Fetching records: offset=9000
+2026-08-19 05:10:39,513 | INFO | __main__ | Fetched 10000 / 26600 records
+2026-08-19 05:10:39,513 | INFO | __main__ | Fetching records: offset=10000
+2026-08-19 05:10:44,453 | INFO | __main__ | Fetched 11000 / 26600 records
+2026-08-19 05:10:44,454 | INFO | __main__ | Fetching records: offset=11000
+2026-08-19 05:10:49,960 | INFO | __main__ | Fetched 12000 / 26600 records
+2026-08-19 05:10:49,960 | INFO | __main__ | Fetching records: offset=12000
+2026-08-19 05:10:54,718 | INFO | __main__ | Fetched 13000 / 26600 records
+2026-08-19 05:10:54,718 | INFO | __main__ | Fetching records: offset=13000
+2026-08-19 05:10:59,663 | INFO | __main__ | Fetched 14000 / 26600 records
+2026-08-19 05:10:59,664 | INFO | __main__ | Fetching records: offset=14000
+2026-08-19 05:11:04,103 | INFO | __main__ | Fetched 15000 / 26600 records
+2026-08-19 05:11:04,103 | INFO | __main__ | Fetching records: offset=15000
+2026-08-19 05:11:09,844 | INFO | __main__ | Fetched 16000 / 26600 records
+2026-08-19 05:11:09,845 | INFO | __main__ | Fetching records: offset=16000
+2026-08-19 05:11:15,467 | INFO | __main__ | Fetched 17000 / 26600 records
+2026-08-19 05:11:15,467 | INFO | __main__ | Fetching records: offset=17000
+2026-08-19 05:11:20,715 | INFO | __main__ | Fetched 18000 / 26600 records
+2026-08-19 05:11:20,715 | INFO | __main__ | Fetching records: offset=18000
+2026-08-19 05:11:25,207 | INFO | __main__ | Fetched 19000 / 26600 records
+2026-08-19 05:11:25,207 | INFO | __main__ | Fetching records: offset=19000
+2026-08-19 05:11:30,871 | INFO | __main__ | Fetched 20000 / 26600 records
+2026-08-19 05:11:30,871 | INFO | __main__ | Fetching records: offset=20000
+2026-08-19 05:11:39,151 | INFO | __main__ | Fetched 21000 / 26600 records
+2026-08-19 05:11:39,151 | INFO | __main__ | Fetching records: offset=21000
+2026-08-19 05:11:45,337 | INFO | __main__ | Fetched 22000 / 26600 records
+2026-08-19 05:11:45,337 | INFO | __main__ | Fetching records: offset=22000
+2026-08-19 05:11:50,720 | INFO | __main__ | Fetched 23000 / 26600 records
+2026-08-19 05:11:50,720 | INFO | __main__ | Fetching records: offset=23000
+2026-08-19 05:11:58,825 | INFO | __main__ | Fetched 24000 / 26600 records
+2026-08-19 05:11:58,825 | INFO | __main__ | Fetching records: offset=24000
+2026-08-19 05:12:03,980 | INFO | __main__ | Fetched 25000 / 26600 records
+2026-08-19 05:12:03,980 | INFO | __main__ | Fetching records: offset=25000
+2026-08-19 05:12:10,152 | INFO | __main__ | Fetched 26000 / 26600 records
+2026-08-19 05:12:10,152 | INFO | __main__ | Fetching records: offset=26000
+2026-08-19 05:12:15,659 | INFO | __main__ | Fetched 26600 / 26600 records
+2026-08-19 05:12:16,252 | INFO | __main__ | Saved 26600 records to C:\Users\sintu\Desktop\drug-bioactivity-predictor\data\raw\egfr_ic50_raw.csv
