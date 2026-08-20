@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import joblib
 import matplotlib.pyplot as plt
 import numpy as np
@@ -8,7 +10,7 @@ from sklearn.metrics import (
 )
 from sklearn.model_selection import train_test_split
 
-from config import (
+from .config import (
     FIGURES_DIR,
     MODELS_DIR,
     PROCESSED_DATA_DIR,

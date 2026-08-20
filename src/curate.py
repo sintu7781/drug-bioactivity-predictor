@@ -2,9 +2,9 @@ from pathlib import Path
 
 import pandas as pd
 
-from config import PROCESSED_DATA_DIR, RAW_DATA_DIR
-from logging_config import configure_logging
-from preprocessing import curate_data, save_curated_data
+from .config import PROCESSED_DATA_DIR, RAW_DATA_DIR
+from .logging_config import configure_logging
+from .preprocessing import curate_data, save_curated_data
 
 def main() -> None:
     configure_logging(Path("logs/curation.log"))

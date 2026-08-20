@@ -4,7 +4,7 @@ from pathlib import Path
 import pandas as pd
 import requests
 
-from config import RAW_DATA_DIR, TARGET_CHEMBL_ID
+from .config import RAW_DATA_DIR, TARGET_CHEMBL_ID
 
 LOGGER = logging.getLogger(__name__)
 

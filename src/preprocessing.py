@@ -6,7 +6,7 @@ from pathlib import Path
 import pandas as pd
 from rdkit import Chem
 
-from config import ACTIVE_THRESHOLD_NM
+from .config import ACTIVE_THRESHOLD_NM
 
 LOGGER = logging.getLogger(__name__)
 

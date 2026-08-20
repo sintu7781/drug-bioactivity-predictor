@@ -1,8 +1,10 @@
+from pathlib import Path
+
 import numpy as np
 import pandas as pd
 
-from config import PROCESSED_DATA_DIR
-from features import featurize_smiles
+from .config import PROCESSED_DATA_DIR
+from .features import featurize_smiles
 
 
 def main() -> None:

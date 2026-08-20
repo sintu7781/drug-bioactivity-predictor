@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import joblib
 import numpy as np
 
@@ -18,7 +20,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from xgboost import XGBClassifier
 
-from config import (
+from .config import (
     MODELS_DIR,
     RANDOM_STATE,
     PROCESSED_DATA_DIR,
