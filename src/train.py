@@ -1,8 +1,5 @@
-from pathlib import Path
-
 import joblib
 import numpy as np
-
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (
@@ -22,8 +19,8 @@ from xgboost import XGBClassifier
 
 from .config import (
     MODELS_DIR,
-    RANDOM_STATE,
     PROCESSED_DATA_DIR,
+    RANDOM_STATE,
 )
 
 
@@ -33,11 +30,9 @@ def evaluate_model(
     y_test,
 ):
     predictions = model.predict(X_test)
-    
-    probabilities = model.predict_proba(
-        X_test
-    )[:, 1]
-    
+
+    probabilities = model.predict_proba(X_test)[:, 1]
+
     return {
         "accuracy": accuracy_score(
             y_test,
@@ -63,17 +58,15 @@ def evaluate_model(
             probabilities,
         ),
     }
-    
+
+
 def main() -> None:
-    
-    data = np.load(
-        PROCESSED_DATA_DIR /
-        "egfr_features.npz"
-    )
-    
+
+    data = np.load(PROCESSED_DATA_DIR / "egfr_features.npz")
+
     X = data["X"]
     y = data["y"]
-    
+
     (
         X_train,
         X_test,
@@ -86,9 +79,8 @@ def main() -> None:
         stratify=y,
         random_state=RANDOM_STATE,
     )
-    
+
     models = {
-        
         "logistic_regression": Pipeline(
             [
                 (
@@ -105,7 +97,6 @@ def main() -> None:
                 ),
             ]
         ),
-        
         "random_forest": RandomForestClassifier(
             n_estimators=500,
             max_features="sqrt",
@@ -113,7 +104,6 @@ def main() -> None:
             random_state=RANDOM_STATE,
             n_jobs=-1,
         ),
-        
         "xgboost": XGBClassifier(
             n_estimators=500,
             max_depth=6,
@@ -124,34 +114,31 @@ def main() -> None:
             eval_metric="logloss",
             random_state=RANDOM_STATE,
             n_jobs=-1,
-        )
+        ),
     }
-    
+
     results = {}
-    
+
     best_model = None
     best_name = None
     best_score = -1
-    
+
     for name, model in models.items():
-        
-        print(
-            f"\nTraining {name}..."
-        )
-        
+        print(f"\nTraining {name}...")
+
         model.fit(
             X_train,
             y_train,
         )
-        
+
         metrics = evaluate_model(
             model,
             X_test,
             y_test,
         )
-        
+
         results[name] = metrics
-        
+
         print(
             classification_report(
                 y_test,
@@ -162,19 +149,19 @@ def main() -> None:
                 ],
             )
         )
-        
+
         print(metrics)
-        
+
         if metrics["roc_auc"] > best_score:
             best_score = metrics["roc_auc"]
             best_model = model
             best_name = name
-    
+
     MODELS_DIR.mkdir(
         parents=True,
         exist_ok=True,
     )
-    
+
     artifact = {
         "model": best_model,
         "model_name": best_name,
@@ -182,22 +169,17 @@ def main() -> None:
         "random_state": RANDOM_STATE,
         "metrics": results,
     }
-    
+
     joblib.dump(
         artifact,
-        MODELS_DIR /
-        "bioactivity_model.joblib",
+        MODELS_DIR / "bioactivity_model.joblib",
         compress=3,
     )
-    
-    print(
-        f"\nBest model: {best_name}"
-    )
-    
-    print(
-        f"ROC-AUC: {best_score:.4f}"
-    )
-    
+
+    print(f"\nBest model: {best_name}")
+
+    print(f"ROC-AUC: {best_score:.4f}")
+
 
 if __name__ == "__main__":
     main()
