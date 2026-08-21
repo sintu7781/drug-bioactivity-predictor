@@ -1,8 +1,16 @@
 from __future__ import annotations
 
 import numpy as np
+
 from rdkit import Chem
-from rdkit.Chem import Crippen, Descriptors, Lipinski, rdFingerprintGenerator
+from rdkit import DataStructs
+from rdkit.Chem import (
+    Crippen, 
+    Descriptors, 
+    Lipinski, 
+    rdFingerprintGenerator
+)
+
 
 DESCRIPTOR_NAMES = [
     "MolWt",
@@ -16,43 +24,94 @@ DESCRIPTOR_NAMES = [
 ]
 
 
+MORGAN_RADIUS = 2
+MORGAN_N_BITS = 2048
+
+
+MORGAN_GENERATOR = (
+    rdFingerprintGenerator
+    .GetMorganGenerator(
+        radius=MORGAN_RADIUS,
+        fpSize=MORGAN_N_BITS,
+    )
+)
+
+
 def smiles_to_mol(smiles: str):
-    molecule = Chem.MolFromSmiles(smiles)
+    
+    if not isinstance(
+        smiles,
+        str,
+    ):
+        
+        raise ValueError(
+            "SMILES must be a string."
+        )
+        
+    molecule = Chem.MolFromSmiles(
+        smiles
+    )
 
     if molecule is None:
-        raise ValueError(f"Invalid SMILES: {smiles}")
+        
+        raise ValueError(
+            f"Invalid SMILES: {smiles}"
+        )
 
     return molecule
 
 
-def calculate_descriptors(molecule) -> dict[str, float]:
+def calculate_descriptors(
+    molecule
+) -> dict[str, float]:
+    
     return {
-        "MolWt": Descriptors.MolWt(molecule),
-        "LogP": Crippen.MolLogP(molecule),
-        "HBD": Lipinski.NumHDonors(molecule),
-        "HBA": Lipinski.NumHAcceptors(molecule),
-        "RotatableBonds": Lipinski.NumRotatableBonds(molecule),
-        "TPSA": Descriptors.TPSA(molecule),
-        "RingCount": Lipinski.RingCount(molecule),
-        "HeavyAtomCount": Lipinski.HeavyAtomCount(molecule),
+        "MolWt": float(
+            Descriptors.MolWt(molecule)
+        ),
+        "LogP": float(
+            Crippen.MolLogP(molecule)
+        ),
+        "HBD": float(
+            Lipinski.NumHDonors(molecule)
+        ),
+        "HBA": float(
+            Lipinski.NumHAcceptors(molecule)
+        ),
+        "RotatableBonds": float(
+            Lipinski.NumRotatableBonds(
+                molecule
+            )
+        ),
+        "TPSA": float(
+            Descriptors.TPSA(molecule)
+        ),
+        "RingCount": float(
+            Lipinski.RingCount(molecule)
+        ),
+        "HeavyAtomCount": float(
+            Lipinski.HeavyAtomCount(
+                molecule
+            )
+        ),
     }
 
-
-MORGAN_GENERATOR = rdFingerprintGenerator.GetMorganGenerator(
-    radius=2,
-    fpSize=2048,
-)
 
 
 def caculate_morgan_fingerprint(
     molecule,
 ) -> np.ndarray:
-    fingerprint = MORGAN_GENERATOR.GetFingerprint(molecule)
+    
+    fingerprint = (
+        MORGAN_GENERATOR.GetFingerprint(
+            molecule
+        )
+    )
 
-    array = np.zeros((2048,), dtype=np.uint8)
-
-    # RDKit writes the bit vector into this array.
-    from rdkit import DataStructs
+    array = np.zeros(
+        MORGAN_N_BITS,
+        dtype=np.uint8
+    )
 
     DataStructs.ConvertToNumpyArray(
         fingerprint,
@@ -62,22 +121,53 @@ def caculate_morgan_fingerprint(
     return array
 
 
-def featurize_smiles(smiles: str) -> np.ndarray:
+def featurize_smiles(
+    smiles: str
+) -> np.ndarray:
 
-    molecule = smiles_to_mol(smiles)
+    molecule = smiles_to_mol(
+        smiles
+    )
 
-    descriptors = calculate_descriptors(molecule)
+    descriptors = calculate_descriptors(
+        molecule
+    )
 
     descriptor_vector = np.array(
-        [descriptors[name] for name in DESCRIPTOR_NAMES],
+        [
+            descriptors[name] 
+            for name in DESCRIPTOR_NAMES
+        ],
         dtype=np.float32,
     )
 
-    fingerprint_vector = caculate_morgan_fingerprint(molecule).astype(np.float32)
+    fingerprint_vector = (
+        caculate_morgan_fingerprint(
+            molecule
+        ).astype(np.float32))
 
     return np.concatenate(
         [
             descriptor_vector,
             fingerprint_vector,
         ]
+    )
+    
+
+def feature_names() -> list[str]:
+    
+    descriptor_features = (
+        DESCRIPTOR_NAMES
+    )
+    
+    fingerprint_features = [
+        f"morgan_{i}"
+        for i in range(
+            MORGAN_N_BITS
+        )
+    ]
+    
+    return  (
+        descriptor_features
+        + fingerprint_features
     )
