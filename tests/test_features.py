@@ -1,35 +1,44 @@
 import numpy as np
+import pytest
 
 from src.features import (
-    caculate_morgan_fingerprint,
     calculate_descriptors,
+    caculate_morgan_fingerprint,
+    featurize_smiles,
     smiles_to_mol,
 )
 
 
 def test_valid_smiles():
 
-    molecule = smiles_to_mol("CCO")
+    molecule = smiles_to_mol(
+        "CCO"
+    )
 
     assert molecule is not None
 
 
 def test_invalid_smiles():
 
-    try:
-        smiles_to_mol("invalid_smiles")
-
-        assert False
-
-    except ValueError:
-        assert True
+    with pytest.raises(
+        ValueError
+    ):
+        smiles_to_mol(
+            "not-a-valid-smiles"
+        )
 
 
 def test_descriptors():
 
-    molecule = smiles_to_mol("CCO")
+    molecule = smiles_to_mol(
+        "CCO"
+    )
 
-    descriptors = calculate_descriptors(molecule)
+    descriptors = (
+        calculate_descriptors(
+            molecule
+        )
+    )
 
     assert descriptors["MolWt"] > 0
     assert "LogP" in descriptors
@@ -39,9 +48,15 @@ def test_descriptors():
 
 def test_morgan_fingerprint():
 
-    molecule = smiles_to_mol("CCO")
+    molecule = smiles_to_mol(
+        "CCO"
+    )
 
-    fingerprint = caculate_morgan_fingerprint(molecule)
+    fingerprint = (
+        caculate_morgan_fingerprint(
+            molecule
+        )
+    )
 
     assert isinstance(
         fingerprint,
@@ -49,3 +64,17 @@ def test_morgan_fingerprint():
     )
 
     assert fingerprint.shape == (2048,)
+
+def test_full_feature_vector():
+    
+    vector = featurize_smiles(
+        "CCO"
+    )
+    
+    assert vector.shape == (
+        2056,
+    )
+    
+    assert np.isfinite(
+        vector
+    ).all()
