@@ -1,50 +1,100 @@
+from __future__ import annotations
+
+import logging
+
 import numpy as np
 import pandas as pd
 
-from .config import PROCESSED_DATA_DIR
-from .features import featurize_smiles
+from .config import (
+    CURATED_DATA_FILE,
+    FEATURE_FILE,
+    MODEL_METADATA_FILE,
+)
+from .features import (
+    featurize_smiles,
+)
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 def main() -> None:
-    input_path = PROCESSED_DATA_DIR / "egfr_ic50_curated.csv"
 
-    output_path = PROCESSED_DATA_DIR / "egfr_features.npz"
-
-    df = pd.read_csv(input_path)
+    df = pd.read_csv(
+        CURATED_DATA_FILE
+    )
 
     features = []
-
-    valid_rows = []
+    valid_indices = []
 
     for index, row in df.iterrows():
+        
         try:
-            vector = featurize_smiles(row["canonical_smiles"])
+            
+            vector = featurize_smiles(
+                row["canonical_smiles"]
+            )
 
-            features.append(vector)
-            valid_rows.append(index)
+            features.append(
+                vector
+            )
+            valid_indices.append(
+                index
+            )
 
         except ValueError as exc:
-            print(f"Skipping row {index}: {exc}")
+            
+            LOGGER.warning(
+                f"Skipping %s: %s",
+                index,
+                exc,
+            )
+            
+    if not features:
+        
+        raise RuntimeError(
+            "No molecules could be featurized."
+        )
 
-    df = df.loc[valid_rows].reset_index(drop=True)
+    valid_df = (
+        df.loc[
+            valid_indices
+            ]
+        .reset_index(drop=True)
+    )
 
-    X = np.vstack(features)
+    X = np.vstack(
+        features
+    )
 
-    y = df["activity_label"].to_numpy(dtype=np.int64)
+    y = valid_df[
+        "activity_label"
+    ].to_numpy(
+        dtype=np.int64
+    )
 
+    FEATURE_FILE.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+    
     np.savez_compressed(
-        output_path,
+        FEATURE_FILE,
         X=X,
         y=y,
     )
 
-    df.to_csv(
-        PROCESSED_DATA_DIR / "egfr_model_metadata.csv",
+    valid_df.to_csv(
+        MODEL_METADATA_FILE,
         index=False,
     )
 
-    print("Feature matrix:", X.shape)
-    print("Target vector:", y.shape)
+    print(
+        f"Feature matrix: {X.shape}"
+    )
+    print(
+        f"Target vector: {y.shape}"
+    )
 
 
 if __name__ == "__main__":
