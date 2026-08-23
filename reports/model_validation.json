@@ -1,0 +1,51 @@
+{
+  "dataset": {
+    "compounds": 13577,
+    "features": 2056,
+    "active": 9142,
+    "inactive": 4435,
+    "active_fraction": 0.6733446269426235
+  },
+  "model": {
+    "name": "random_forest"
+  },
+  "random_split": {
+    "train_size": 10861,
+    "test_size": 2716,
+    "metrics": {
+      "accuracy": 0.8921207658321061,
+      "precision": 0.9363636363636364,
+      "recall": 0.9010388190267906,
+      "f1": 0.9183616606297018,
+      "roc_auc": 0.951195292182876,
+      "pr_auc": 0.9742569858693262,
+      "true_negative": 775,
+      "false_positive": 112,
+      "false_negative": 181,
+      "true_positive": 1648
+    }
+  },
+  "scaffold_split": {
+    "train_size": 10850,
+    "test_size": 2727,
+    "train_active_fraction": 0.6732718894009216,
+    "test_active_fraction": 0.6736340300696736,
+    "metrics": {
+      "accuracy": 0.8401173450678401,
+      "precision": 0.8760064412238325,
+      "recall": 0.8884050081654872,
+      "f1": 0.8821621621621621,
+      "roc_auc": 0.9118353690983712,
+      "pr_auc": 0.9550721872131476,
+      "true_negative": 659,
+      "false_positive": 231,
+      "false_negative": 205,
+      "true_positive": 1632
+    }
+  },
+  "generalization": {
+    "roc_auc_random": 0.951195292182876,
+    "roc_auc_scaffold": 0.9118353690983712,
+    "roc_auc_gap": 0.039359923084504866
+  }
+}
