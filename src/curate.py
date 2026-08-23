@@ -23,7 +23,8 @@ def main() -> None:
     )
     
     df = pd.read_csv(
-        input_file
+        input_file,
+        low_memory=False,
     )
     
     curated, quality = curate_data(
