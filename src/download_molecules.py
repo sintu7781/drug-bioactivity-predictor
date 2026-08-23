@@ -65,7 +65,8 @@ def main() -> None:
     )
     
     df = pd.read_csv(
-        RAW_ACTIVITY_FILE
+        RAW_ACTIVITY_FILE,
+        low_memory=False,
     )
     
     if (
