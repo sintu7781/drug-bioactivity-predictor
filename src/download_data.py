@@ -9,10 +9,7 @@ import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-from .config import (
-    RAW_ACTIVITY_FILE, 
-    TARGET_CHEMBL_ID
-)
+from .config import RAW_ACTIVITY_FILE, TARGET_CHEMBL_ID
 from .logging_config import configure_logging
 
 LOGGER = logging.getLogger(__name__)

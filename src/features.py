@@ -1,16 +1,13 @@
 from __future__ import annotations
 
 import numpy as np
-
-from rdkit import Chem
-from rdkit import DataStructs
+from rdkit import Chem, DataStructs
 from rdkit.Chem import (
-    Crippen, 
-    Descriptors, 
-    Lipinski, 
-    rdFingerprintGenerator
+    Crippen,
+    Descriptors,
+    Lipinski,
+    rdFingerprintGenerator,
 )
-
 
 DESCRIPTOR_NAMES = [
     "MolWt",
@@ -29,31 +26,43 @@ MORGAN_N_BITS = 2048
 
 
 MORGAN_GENERATOR = (
-    rdFingerprintGenerator
-    .GetMorganGenerator(
+    rdFingerprintGenerator.GetMorganGenerator(
         radius=MORGAN_RADIUS,
         fpSize=MORGAN_N_BITS,
     )
 )
 
 
-def smiles_to_mol(smiles: str):
-    
+def smiles_to_mol(
+    smiles: str,
+) -> Chem.Mol:
+    """
+    Convert a SMILES string into an RDKit molecule.
+
+    Raises:
+        ValueError: If the SMILES is invalid.
+    """
+
     if not isinstance(
         smiles,
         str,
     ):
-        
-        raise ValueError(
+        raise TypeError(
             "SMILES must be a string."
         )
-        
+
+    smiles = smiles.strip()
+
+    if not smiles:
+        raise ValueError(
+            "SMILES cannot be empty."
+        )
+
     molecule = Chem.MolFromSmiles(
         smiles
     )
 
     if molecule is None:
-        
         raise ValueError(
             f"Invalid SMILES: {smiles}"
         )
@@ -62,21 +71,33 @@ def smiles_to_mol(smiles: str):
 
 
 def calculate_descriptors(
-    molecule
+    molecule: Chem.Mol,
 ) -> dict[str, float]:
-    
+    """
+    Calculate the eight molecular descriptors
+    used by the trained model.
+    """
+
     return {
         "MolWt": float(
-            Descriptors.MolWt(molecule)
+            Descriptors.MolWt(
+                molecule
+            )
         ),
         "LogP": float(
-            Crippen.MolLogP(molecule)
+            Crippen.MolLogP(
+                molecule
+            )
         ),
         "HBD": float(
-            Lipinski.NumHDonors(molecule)
+            Lipinski.NumHDonors(
+                molecule
+            )
         ),
         "HBA": float(
-            Lipinski.NumHAcceptors(molecule)
+            Lipinski.NumHAcceptors(
+                molecule
+            )
         ),
         "RotatableBonds": float(
             Lipinski.NumRotatableBonds(
@@ -84,10 +105,14 @@ def calculate_descriptors(
             )
         ),
         "TPSA": float(
-            Descriptors.TPSA(molecule)
+            Descriptors.TPSA(
+                molecule
+            )
         ),
         "RingCount": float(
-            Lipinski.RingCount(molecule)
+            Lipinski.RingCount(
+                molecule
+            )
         ),
         "HeavyAtomCount": float(
             Lipinski.HeavyAtomCount(
@@ -97,11 +122,18 @@ def calculate_descriptors(
     }
 
 
-
-def caculate_morgan_fingerprint(
-    molecule,
+def generate_morgan_fingerprint(
+    molecule: Chem.Mol,
 ) -> np.ndarray:
-    
+    """
+    Generate the 2048-bit Morgan fingerprint
+    used by the trained model.
+
+    Configuration:
+        radius = 2
+        bits = 2048
+    """
+
     fingerprint = (
         MORGAN_GENERATOR.GetFingerprint(
             molecule
@@ -110,7 +142,7 @@ def caculate_morgan_fingerprint(
 
     array = np.zeros(
         MORGAN_N_BITS,
-        dtype=np.uint8
+        dtype=np.uint8,
     )
 
     DataStructs.ConvertToNumpyArray(
@@ -122,8 +154,18 @@ def caculate_morgan_fingerprint(
 
 
 def featurize_smiles(
-    smiles: str
+    smiles: str,
 ) -> np.ndarray:
+    """
+    Convert SMILES into the complete
+    2056-dimensional model feature vector.
+
+    8 molecular descriptors
+    +
+    2048 Morgan fingerprint bits
+    =
+    2056 features
+    """
 
     molecule = smiles_to_mol(
         smiles
@@ -135,39 +177,54 @@ def featurize_smiles(
 
     descriptor_vector = np.array(
         [
-            descriptors[name] 
+            descriptors[name]
             for name in DESCRIPTOR_NAMES
         ],
         dtype=np.float32,
     )
 
     fingerprint_vector = (
-        caculate_morgan_fingerprint(
+        generate_morgan_fingerprint(
             molecule
-        ).astype(np.float32))
+        ).astype(
+            np.float32
+        )
+    )
 
-    return np.concatenate(
+    features = np.concatenate(
         [
             descriptor_vector,
             fingerprint_vector,
         ]
     )
-    
+
+    if features.shape[0] != 2056:
+        raise RuntimeError(
+            "Unexpected feature count: "
+            f"{features.shape[0]}. "
+            "Expected 2056."
+        )
+
+    return features
+
 
 def feature_names() -> list[str]:
-    
+    """
+    Return names for all 2056 features.
+    """
+
     descriptor_features = (
-        DESCRIPTOR_NAMES
+        DESCRIPTOR_NAMES.copy()
     )
-    
+
     fingerprint_features = [
         f"morgan_{i}"
         for i in range(
             MORGAN_N_BITS
         )
     ]
-    
-    return  (
+
+    return (
         descriptor_features
         + fingerprint_features
     )

@@ -3,7 +3,6 @@ from __future__ import annotations
 import joblib
 import matplotlib.pyplot as plt
 import numpy as np
-
 from sklearn.metrics import (
     ConfusionMatrixDisplay,
     PrecisionRecallDisplay,
@@ -14,8 +13,8 @@ from sklearn.model_selection import (
 )
 
 from .config import (
-    FIGURES_DIR,
     FEATURE_FILE,
+    FIGURES_DIR,
     MODEL_FILE,
     RANDOM_STATE,
     TEST_SIZE,
@@ -32,9 +31,9 @@ def main() -> None:
     y = data["y"]
 
     (
-        X_train,
+        _X_train,
         X_test,
-        y_train,
+        _y_train,
         y_test,
     ) = train_test_split(
         X,

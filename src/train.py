@@ -1,12 +1,10 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
 
 import joblib
 import numpy as np
 import pandas as pd
-
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (

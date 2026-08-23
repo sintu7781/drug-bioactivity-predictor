@@ -9,7 +9,6 @@ from rdkit.Chem import Draw
 
 from src.predict import BioactivityPredictor
 
-
 # =======================================================
 # Paths
 # =======================================================
@@ -121,7 +120,12 @@ def load_predictor() -> BioactivityPredictor:
 try:
     predictor = load_predictor()
 
-except Exception as exc:
+except (
+    FileNotFoundError,
+    TypeError,
+    ValueError,
+    RuntimeError,
+) as exc:
     st.error(
         f"Unable to load the trained model: {exc}"
     )
@@ -472,7 +476,10 @@ with single_tab:
                     f"Invalid molecule: {exc}"
                 )
 
-            except Exception as exc:
+            except (
+                TypeError,
+                RuntimeError,
+            ) as exc:
 
                 st.error(
                     "Prediction failed."
@@ -623,7 +630,11 @@ with batch_tab:
                         }
                     )
 
-                except Exception as exc:
+                except (
+                    TypeError,
+                    ValueError,
+                    RuntimeError,
+                ) as exc:
 
                     results.append(
                         {
@@ -776,7 +787,11 @@ with batch_tab:
                 width="stretch",
             )
 
-        except Exception as exc:
+        except (
+            TypeError,
+            ValueError,
+            RuntimeError,
+        ) as exc:
 
             st.error(
                 "Could not process the uploaded CSV."

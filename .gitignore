@@ -1,37 +1,82 @@
+# ============================================================
 # Python
+# ============================================================
+
 __pycache__/
 *.py[cod]
-.pytest_cache/
-.ruff_cache/
+*.pyo
+*.pyd
 
-# Virtual environment
+# Virtual environments
 .venv/
 venv/
 env/
 
-# Jupyter
-.ipynb_checkpoints/
+# ============================================================
+# Testing / tooling
+# ============================================================
 
-# Environment
-.env
-.env.*
+.pytest_cache/
+.coverage
+htmlcov/
+.ruff_cache/
 
+# ============================================================
+# IDE
+# ============================================================
+
+.idea/
+.vscode/
+
+# ============================================================
 # OS
+# ============================================================
+
 .DS_Store
 Thumbs.db
 
-# Data
-data/raw/*
-data/processed/*
-!data/raw/.gitkeep
-!data/processed/.gitkeep
+# ============================================================
+# Jupyter
+# ============================================================
 
-# Generated models
-models/*
-!models/.gitkeep
+.ipynb_checkpoints/
 
+# ============================================================
+# Streamlit secrets
+# ============================================================
+
+.streamlit/secrets.toml
+
+# ============================================================
 # Logs
-logs/*
+# ============================================================
 
-# Generated reports
-reports/figures/*
+*.log
+logs/
+src/logs/
+
+# ============================================================
+# Temporary files
+# ============================================================
+
+*.tmp
+*.temp
+
+# ============================================================
+# Generated datasets and model artifacts
+# ============================================================
+
+# Raw downloaded datasets
+data/raw/
+
+# Generated feature matrix
+data/processed/egfr_features.npz
+
+# Generated model metadata table
+data/processed/egfr_model_metadata.csv
+
+# Trained model binary
+models/*.joblib
+
+# Runtime logs
+src/logs/

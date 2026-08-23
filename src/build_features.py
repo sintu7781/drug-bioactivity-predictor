@@ -14,7 +14,6 @@ from .features import (
     featurize_smiles,
 )
 
-
 LOGGER = logging.getLogger(__name__)
 
 
@@ -45,7 +44,7 @@ def main() -> None:
         except ValueError as exc:
             
             LOGGER.warning(
-                f"Skipping %s: %s",
+                "Skipping %s: %s",
                 index,
                 exc,
             )

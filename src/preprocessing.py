@@ -9,7 +9,6 @@ from rdkit import Chem
 
 from .config import ACTIVE_THRESHOLD_NM
 
-
 LOGGER = logging.getLogger(__name__)
 
 

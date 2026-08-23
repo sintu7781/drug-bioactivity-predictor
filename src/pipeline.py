@@ -3,6 +3,7 @@ from __future__ import annotations
 import subprocess
 import sys
 
+
 def run_module(
     module: str
 ) -> None:

@@ -12,7 +12,6 @@ from .config import (
     RAW_DATA_DIR,
 )
 
-
 LOGGER = logging.getLogger(__name__)
 
 MOLECULE_URL = (
@@ -55,9 +54,7 @@ def fetch_molecule(
     
 def main() -> None:
     
-    from .download_data import (
-        create_session
-    )
+    from .download_data import create_session
     
     RAW_DATA_DIR.mkdir(
         parents=True,
@@ -135,9 +132,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     
-    from .logging_config import (
-        configure_logging
-    )
+    from .logging_config import configure_logging
     
     configure_logging(
         Path("logs/molecules.log")

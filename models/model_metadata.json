@@ -1,0 +1,10 @@
+{
+  "target": "EGFR",
+  "target_chembl_id": "CHEMBL203",
+  "activity_type": "IC50",
+  "activity_unit": "nM",
+  "active_threshold_nM": 1000,
+  "morgan_radius": 2,
+  "morgan_bits": 2048,
+  "random_state": 42
+}

@@ -3,8 +3,8 @@ import pytest
 
 from src.features import (
     calculate_descriptors,
-    caculate_morgan_fingerprint,
     featurize_smiles,
+    generate_morgan_fingerprint,
     smiles_to_mol,
 )
 
@@ -53,7 +53,7 @@ def test_morgan_fingerprint():
     )
 
     fingerprint = (
-        caculate_morgan_fingerprint(
+        generate_morgan_fingerprint(
             molecule
         )
     )
