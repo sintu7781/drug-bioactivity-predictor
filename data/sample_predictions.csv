@@ -1,4 +1,6 @@
 smiles
 CCO
-CC(=O)Oc1ccccc1C(=O)O
-Cn1cnc2c1c(=O)n(C)c(=O)n2C
+CCN
+c1ccccc1
+COc1ccc(Nc2ncnc3cc(OC)c(OC)cc23)cc1OC
+C[N+]1=CC=CC=C1
