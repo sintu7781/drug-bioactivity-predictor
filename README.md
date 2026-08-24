@@ -647,44 +647,184 @@ All checks passed!
 
 ---
 
-## 🔄 Reproduce the ML Pipeline
+## 🔄 Reproduce the Complete ML Pipeline
 
-The individual pipeline stages can be executed using:
+The entire machine-learning workflow can be reproduced using the included PowerShell pipeline script.
 
-### Data processing
+### One-command pipeline
+
+On Windows:
 
 ```powershell
-python -m src.preprocessing
+.\run_pipeline.ps1
 ```
 
-### Feature generation
+The pipeline executes the following stages automatically:
+
+```text
+ChEMBL Bioactivity Data
+        │
+        ▼
+Download Activity Data
+        │
+        ▼
+Download Molecule Structures
+        │
+        ▼
+Dataset Curation
+        │
+        ▼
+Molecular Feature Generation
+        │
+        ▼
+Model Training
+        │
+        ▼
+Random Test Evaluation
+        │
+        ▼
+Scaffold Evaluation
+        │
+        ▼
+Final Model Validation
+```
+
+### Pipeline stages
+
+| Stage | Module                   | Purpose                                                |
+| ----- | ------------------------ | ------------------------------------------------------ |
+| 1     | `src.download_data`      | Download EGFR bioactivity records                      |
+| 2     | `src.download_molecules` | Resolve molecule structures / SMILES                   |
+| 3     | `src.curate`             | Clean and curate the bioactivity dataset               |
+| 4     | `src.build_features`     | Generate molecular descriptors and Morgan fingerprints |
+| 5     | `src.train`              | Train and compare ML models                            |
+| 6     | `src.evaluate`           | Generate model evaluation metrics and figures          |
+| 7     | `src.scaffold_evaluate`  | Evaluate chemical scaffold generalization              |
+| 8     | `src.final_evaluation`   | Perform final model validation                         |
+
+### Individual pipeline commands
+
+Each stage can also be executed independently.
+
+#### Download data
+
+```powershell
+python -m src.download_data
+```
+
+#### Download molecule structures
+
+```powershell
+python -m src.download_molecules
+```
+
+#### Curate dataset
+
+```powershell
+python -m src.curate
+```
+
+#### Build molecular features
 
 ```powershell
 python -m src.build_features
 ```
 
-### Model training
+#### Train models
 
 ```powershell
 python -m src.train
 ```
 
-### Model evaluation
+#### Evaluate models
 
 ```powershell
 python -m src.evaluate
 ```
 
-### Scaffold evaluation
+#### Scaffold evaluation
 
 ```powershell
 python -m src.scaffold_evaluate
 ```
 
-### Final validation
+#### Final validation
 
 ```powershell
 python -m src.final_evaluation
+```
+
+---
+
+## 📦 Generated Artifacts
+
+After a successful pipeline execution, the following artifacts are generated:
+
+```text
+data/
+└── processed/
+    ├── egfr_ic50_curated.csv
+    └── egfr_features.npz
+
+models/
+├── bioactivity_model.joblib
+└── model_metadata.json
+
+reports/
+├── data_quality.json
+├── model_comparison.csv
+├── scaffold_evaluation.json
+├── model_validation.json
+└── figures/
+    ├── confusion_matrix.png
+    ├── precision_recall_curve.png
+    └── roc_curve.png
+```
+
+The trained `bioactivity_model.joblib` file is not required to be committed to Git because the production model is hosted separately on Hugging Face.
+
+---
+
+## 🧪 Verification
+
+After running the pipeline, verify the project using:
+
+```powershell
+pytest
+```
+
+Expected test status:
+
+```text
+15 passed
+```
+
+Run the code-quality checks:
+
+```powershell
+ruff check .
+```
+
+Expected result:
+
+```text
+All checks passed!
+```
+
+---
+
+## 🌐 Run the Application
+
+After the model has been generated:
+
+```powershell
+python -m streamlit run app.py
+```
+
+The application will be available at:
+
+```text
+http://localhost:8501
 ```
 
 ---
