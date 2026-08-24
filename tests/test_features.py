@@ -3,8 +3,8 @@ import pytest
 
 from src.features import (
     calculate_descriptors,
-    featurize_smiles,
     calculate_morgan_fingerprint,
+    featurize_smiles,
     smiles_to_mol,
 )
 

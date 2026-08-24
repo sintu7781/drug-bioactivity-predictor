@@ -631,6 +631,58 @@ The tests cover:
 
 ---
 
+## 🔄 Continuous Integration
+
+This repository uses **GitHub Actions** to automatically validate every push and pull request to the `main` branch.
+
+The CI workflow performs:
+
+```text
+Git Push / Pull Request
+        │
+        ▼
+Checkout Repository
+        │
+        ▼
+Set up Python 3.12
+        │
+        ▼
+Install Dependencies
+        │
+        ▼
+Ruff Code Quality Check
+        │
+        ▼
+Pytest Test Suite
+        │
+        ▼
+CI Result
+```
+
+### Checks
+
+The CI pipeline automatically runs:
+
+```powershell
+ruff check .
+```
+
+and:
+
+```powershell
+pytest
+```
+
+A change is considered valid only when both checks pass.
+
+The complete machine-learning training pipeline is intentionally not executed on every commit because it involves dataset processing and model training. The reproducible training workflow can instead be executed locally using:
+
+```powershell
+.\run_pipeline.ps1
+```
+
+---
+
 ## 🔍 Code Quality
 
 Run Ruff:
