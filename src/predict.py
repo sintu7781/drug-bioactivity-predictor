@@ -7,20 +7,24 @@ import joblib
 import numpy as np
 from huggingface_hub import hf_hub_download
 from rdkit import Chem
-from rdkit.Chem import (
-    Crippen,
-    Descriptors,
-    Lipinski,
-    rdMolDescriptors,
-)
+from rdkit.Chem import Crippen, Descriptors, Lipinski, rdMolDescriptors
 
 from .features import (
     calculate_descriptors,
-    generate_morgan_fingerprint,
+    calculate_morgan_fingerprint,
 )
+
+# ============================================================
+# Hugging Face configuration
+# ============================================================
 
 HF_MODEL_REPO = "prime7781/drug-bioactivity-predictor"
 HF_MODEL_FILENAME = "bioactivity_model.joblib"
+
+
+# ============================================================
+# Model resolution
+# ============================================================
 
 def resolve_model_path(
     model_path: str | Path | None = None,
@@ -28,23 +32,43 @@ def resolve_model_path(
     """
     Resolve the trained model path.
 
-    If a local model path is supplied and exists, use it.
+    Priority:
 
-    If no local model path is supplied, download the model
-    from the public Hugging Face repository.
+    1. Explicit local model path.
+    2. Hugging Face model download.
+
+    This allows the same code to work locally and on
+    Streamlit Community Cloud.
     """
 
+    # --------------------------------------------------------
+    # Local model explicitly supplied
+    # --------------------------------------------------------
+
     if model_path is not None:
+
         local_path = Path(model_path)
 
         if not local_path.exists():
+
             raise FileNotFoundError(
                 f"Model not found: {local_path}"
             )
 
+        if not local_path.is_file():
+
+            raise ValueError(
+                f"Model path is not a file: {local_path}"
+            )
+
         return local_path
 
+    # --------------------------------------------------------
+    # Download from Hugging Face
+    # --------------------------------------------------------
+
     try:
+
         downloaded_path = hf_hub_download(
             repo_id=HF_MODEL_REPO,
             filename=HF_MODEL_FILENAME,
@@ -54,24 +78,22 @@ def resolve_model_path(
         return Path(downloaded_path)
 
     except Exception as exc:
+
         raise RuntimeError(
-            "Unable to download the trained model from "
-            f"Hugging Face repository: {HF_MODEL_REPO}"
+            "Unable to load the trained model from Hugging Face. "
+            f"Repository: {HF_MODEL_REPO}. "
+            f"Filename: {HF_MODEL_FILENAME}"
         ) from exc
 
 
+# ============================================================
+# Predictor
+# ============================================================
+
 class BioactivityPredictor:
     """
-    Production inference wrapper for the trained
-    EGFR bioactivity classifier.
-
-    The trained model expects:
-
-        8 molecular descriptors
-        +
-        2048-bit Morgan fingerprint
-        =
-        2056 features
+    Production inference wrapper for the EGFR bioactivity
+    classification model.
     """
 
     def __init__(
@@ -91,6 +113,7 @@ class BioactivityPredictor:
             artifact,
             dict,
         ):
+
             raise TypeError(
                 "Invalid model artifact. "
                 "Expected a dictionary."
@@ -102,28 +125,35 @@ class BioactivityPredictor:
             "feature_count",
         }
 
-        missing = (
+        missing_keys = (
             required_keys
             - set(artifact.keys())
         )
 
-        if missing:
+        if missing_keys:
+
             raise ValueError(
                 "Model artifact is missing "
-                f"required fields: {sorted(missing)}"
+                f"required fields: {missing_keys}"
             )
+
+        # ----------------------------------------------------
+        # Model
+        # ----------------------------------------------------
 
         self.model = artifact["model"]
 
-        self.model_name = (
-            str(
-                artifact["model_name"]
-            )
+        self.model_name = str(
+            artifact["model_name"]
         )
 
         self.feature_count = int(
             artifact["feature_count"]
         )
+
+        # ----------------------------------------------------
+        # Metadata
+        # ----------------------------------------------------
 
         self.target = str(
             artifact.get(
@@ -181,58 +211,23 @@ class BioactivityPredictor:
             )
         )
 
-        # ------------------------------------------------
-        # Validate the model/feature contract.
-        # ------------------------------------------------
-
-        expected_feature_count = (
-            self.descriptor_count
-            + self.morgan_bits
-        )
-
-        if self.feature_count != (
-            expected_feature_count
-        ):
-            raise ValueError(
-                "Model feature configuration "
-                "is inconsistent. "
-                f"Model expects "
-                f"{self.feature_count} features, "
-                f"but configuration produces "
-                f"{expected_feature_count}."
-            )
-
-        if self.morgan_radius != 2:
-            raise ValueError(
-                "This predictor currently expects "
-                "Morgan radius 2 to match the "
-                "trained model."
-            )
-
-        if self.morgan_bits != 2048:
-            raise ValueError(
-                "This predictor currently expects "
-                "2048 Morgan fingerprint bits "
-                "to match the trained model."
-            )
-
-    # ====================================================
+    # ========================================================
     # SMILES validation
-    # ====================================================
+    # ========================================================
 
     @staticmethod
     def validate_smiles(
         smiles: str,
     ) -> Chem.Mol:
         """
-        Validate a SMILES string and return
-        the corresponding RDKit molecule.
+        Validate a SMILES string and return an RDKit molecule.
         """
 
         if not isinstance(
             smiles,
             str,
         ):
+
             raise TypeError(
                 "SMILES must be a string."
             )
@@ -240,6 +235,7 @@ class BioactivityPredictor:
         smiles = smiles.strip()
 
         if not smiles:
+
             raise ValueError(
                 "SMILES cannot be empty."
             )
@@ -249,57 +245,56 @@ class BioactivityPredictor:
         )
 
         if molecule is None:
+
             raise ValueError(
-                f"Invalid SMILES string: {smiles}"
+                "Invalid SMILES string."
             )
 
         return molecule
 
-    # ====================================================
+    # ========================================================
     # Feature generation
-    # ====================================================
+    # ========================================================
 
     def _build_features(
         self,
         molecule: Chem.Mol,
     ) -> np.ndarray:
         """
-        Build the exact feature vector expected
+        Generate the exact feature representation expected
         by the trained model.
         """
 
-        descriptors = (
-            calculate_descriptors(
-                molecule
-            )
+        descriptors = calculate_descriptors(
+            molecule
         )
 
-        # Keep descriptor ordering deterministic.
-        descriptor_names = [
-            "MolWt",
-            "LogP",
-            "HBD",
-            "HBA",
-            "RotatableBonds",
-            "TPSA",
-            "RingCount",
-            "HeavyAtomCount",
-        ]
+        fingerprint = calculate_morgan_fingerprint(
+            molecule
+        )
 
         descriptor_vector = np.asarray(
             [
                 descriptors[name]
-                for name in descriptor_names
+                for name in (
+                    (
+                        "MolWt",
+                        "LogP",
+                        "HBD",
+                        "HBA",
+                        "RotatableBonds",
+                        "TPSA",
+                        "RingCount",
+                        "HeavyAtomCount",
+                    )
+                )
             ],
-            dtype=np.float32,
+            dtype=np.float64,
         )
 
-        fingerprint_vector = (
-            generate_morgan_fingerprint(
-                molecule
-            ).astype(
-                np.float32
-            )
+        fingerprint_vector = np.asarray(
+            fingerprint,
+            dtype=np.float64,
         )
 
         features = np.concatenate(
@@ -309,44 +304,31 @@ class BioactivityPredictor:
             ]
         )
 
-        # ------------------------------------------------
-        # Hard safety check.
-        # ------------------------------------------------
+        # ----------------------------------------------------
+        # Safety check
+        # ----------------------------------------------------
 
-        if features.ndim != 1:
-            raise RuntimeError(
-                "Feature vector must be one-dimensional."
-            )
+        if len(features) != self.feature_count:
 
-        if len(features) != (
-            self.feature_count
-        ):
             raise RuntimeError(
                 "Feature count mismatch. "
                 f"Expected {self.feature_count}, "
                 f"got {len(features)}."
             )
 
-        # Model expects shape:
-        #
-        # (1, 2056)
-        #
         return features.reshape(
             1,
             -1,
         )
 
-    # ====================================================
+    # ========================================================
     # Molecular properties
-    # ====================================================
+    # ========================================================
 
     @staticmethod
     def _get_properties(
         molecule: Chem.Mol,
     ) -> dict[str, float | int]:
-        """
-        Calculate human-readable molecular properties.
-        """
 
         return {
             "MolWt": float(
@@ -357,7 +339,7 @@ class BioactivityPredictor:
             "LogP": float(
                 Crippen.MolLogP(
                     molecule
-                )
+                ),
             ),
             "HBD": int(
                 Lipinski.NumHDonors(
@@ -389,52 +371,30 @@ class BioactivityPredictor:
             ),
         }
 
-    # ====================================================
+    # ========================================================
     # Prediction
-    # ====================================================
+    # ========================================================
 
     def predict(
         self,
         smiles: str,
     ) -> dict[str, Any]:
         """
-        Predict EGFR bioactivity for a SMILES string.
+        Predict bioactivity for a single compound.
         """
 
-        # ------------------------------------------------
-        # Validate molecule.
-        # ------------------------------------------------
-
-        molecule = (
-            self.validate_smiles(
-                smiles
-            )
+        molecule = self.validate_smiles(
+            smiles
         )
 
-        # ------------------------------------------------
-        # Canonical SMILES.
-        # ------------------------------------------------
-
-        canonical_smiles = (
-            Chem.MolToSmiles(
-                molecule,
-                canonical=True,
-            )
+        canonical_smiles = Chem.MolToSmiles(
+            molecule,
+            canonical=True,
         )
 
-        # ------------------------------------------------
-        # Generate model features.
-        # ------------------------------------------------
-
-        features = (
-            self._build_features(
-                molecule
-            )
+        features = self._build_features(
+            molecule
         )
-
-        # ------------------------------------------------
-        # Model prediction.
-        # ------------------------------------------------
 
         prediction_value = int(
             self.model.predict(
@@ -442,18 +402,46 @@ class BioactivityPredictor:
             )[0]
         )
 
-        probabilities = (
-            self.model.predict_proba(
-                features
-            )[0]
+        # ----------------------------------------------------
+        # Probability
+        # ----------------------------------------------------
+
+        if not hasattr(
+            self.model,
+            "predict_proba",
+        ):
+
+            raise RuntimeError(
+                "The trained model does not "
+                "support probability prediction."
+            )
+
+        probabilities = self.model.predict_proba(
+            features
+        )[0]
+
+        classes = list(
+            self.model.classes_
         )
 
+        try:
+
+            inactive_index = classes.index(0)
+            active_index = classes.index(1)
+
+        except ValueError as exc:
+
+            raise RuntimeError(
+                "Model classes must contain "
+                "both 0 and 1."
+            ) from exc
+
         inactive_probability = float(
-            probabilities[0]
+            probabilities[inactive_index]
         )
 
         active_probability = float(
-            probabilities[1]
+            probabilities[active_index]
         )
 
         prediction = (
@@ -462,72 +450,30 @@ class BioactivityPredictor:
             else "INACTIVE"
         )
 
-        # ------------------------------------------------
-        # Molecular properties.
-        # ------------------------------------------------
+        # ----------------------------------------------------
+        # Molecular descriptors
+        # ----------------------------------------------------
 
-        properties = (
-            self._get_properties(
-                molecule
-            )
+        properties = self._get_properties(
+            molecule
         )
 
-        # ------------------------------------------------
-        # Return structured result.
-        # ------------------------------------------------
+        # ----------------------------------------------------
+        # Response
+        # ----------------------------------------------------
 
         return {
             "smiles": smiles.strip(),
-
-            "canonical_smiles": (
-                canonical_smiles
-            ),
-
-            "prediction": (
-                prediction
-            ),
-
-            "prediction_label": (
-                prediction_value
-            ),
-
-            "active_probability": (
-                active_probability
-            ),
-
-            "inactive_probability": (
-                inactive_probability
-            ),
-
-            "model": (
-                self.model_name
-            ),
-
-            "target": (
-                self.target
-            ),
-
-            "target_chembl_id": (
-                self.target_chembl_id
-            ),
-
-            "activity_type": (
-                self.activity_type
-            ),
-
-            "activity_unit": (
-                self.activity_unit
-            ),
-
-            "active_threshold_nM": (
-                self.active_threshold_nM
-            ),
-
-            "feature_count": (
-                self.feature_count
-            ),
-
-            "descriptors": (
-                properties
-            ),
+            "canonical_smiles": canonical_smiles,
+            "prediction": prediction,
+            "prediction_label": prediction_value,
+            "active_probability": active_probability,
+            "inactive_probability": inactive_probability,
+            "model": self.model_name,
+            "target": self.target,
+            "target_chembl_id": self.target_chembl_id,
+            "activity_type": self.activity_type,
+            "activity_unit": self.activity_unit,
+            "active_threshold_nM": self.active_threshold_nM,
+            "descriptors": properties,
         }

@@ -122,7 +122,7 @@ def calculate_descriptors(
     }
 
 
-def generate_morgan_fingerprint(
+def calculate_morgan_fingerprint(
     molecule: Chem.Mol,
 ) -> np.ndarray:
     """
@@ -184,7 +184,7 @@ def featurize_smiles(
     )
 
     fingerprint_vector = (
-        generate_morgan_fingerprint(
+        calculate_morgan_fingerprint(
             molecule
         ).astype(
             np.float32

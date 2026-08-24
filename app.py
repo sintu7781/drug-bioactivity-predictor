@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 import pandas as pd
@@ -14,12 +15,6 @@ from src.predict import BioactivityPredictor
 # =======================================================
 
 PROJECT_ROOT = Path(__file__).resolve().parent
-
-MODEL_PATH = (
-    PROJECT_ROOT
-    / "models"
-    / "bioactivity_model.joblib"
-)
 
 COMPARISON_PATH = (
     PROJECT_ROOT
@@ -104,6 +99,14 @@ st.markdown(
 
 @st.cache_resource
 def load_predictor() -> BioactivityPredictor:
+    """
+    Load the production predictor.
+
+    BioactivityPredictor is responsible for resolving
+    the model from Hugging Face when no local model path
+    is supplied.
+    """
+
     return BioactivityPredictor()
 
 
@@ -116,9 +119,11 @@ except (
     ValueError,
     RuntimeError,
 ) as exc:
+
     st.error(
         f"Unable to load the trained model: {exc}"
     )
+
     st.stop()
 
 
@@ -129,6 +134,10 @@ except (
 def render_molecule(
     smiles: str,
 ):
+    """
+    Render a molecule from a SMILES string.
+    """
+
     molecule = Chem.MolFromSmiles(
         smiles
     )
@@ -145,12 +154,20 @@ def render_molecule(
 def format_probability(
     probability: float,
 ) -> str:
+    """
+    Convert probability to percentage.
+    """
+
     return f"{probability * 100:.2f}%"
 
 
 def prediction_class(
     prediction: str,
 ) -> str:
+    """
+    Normalize prediction label.
+    """
+
     return prediction.upper()
 
 
@@ -203,11 +220,11 @@ with st.sidebar:
     st.divider()
 
     st.write(
-        "**Model:** Random Forest"
+        f"**Model:** {predictor.model_name}"
     )
 
     st.write(
-        "**Features:** 2,056"
+        f"**Features:** {predictor.feature_count:,}"
     )
 
     st.write(
@@ -223,6 +240,10 @@ with st.sidebar:
     st.caption(
         "Model trained on curated ChEMBL "
         "bioactivity data."
+    )
+
+    st.caption(
+        "Model hosted on Hugging Face."
     )
 
 
@@ -256,9 +277,7 @@ with single_tab:
 
     smiles = st.text_area(
         "SMILES",
-        placeholder=(
-            "Example: CCO"
-        ),
+        placeholder="Example: CCO",
         height=100,
     )
 
@@ -288,27 +307,25 @@ with single_tab:
                     cleaned_smiles
                 )
 
-                prediction = (
-                    prediction_class(
-                        result["prediction"]
-                    )
+                prediction = prediction_class(
+                    result["prediction"]
                 )
 
-                active_probability = (
+                active_probability = float(
                     result[
                         "active_probability"
                     ]
                 )
 
-                inactive_probability = (
+                inactive_probability = float(
                     result[
                         "inactive_probability"
                     ]
                 )
 
-                descriptors = (
-                    result["descriptors"]
-                )
+                descriptors = result[
+                    "descriptors"
+                ]
 
                 st.divider()
 
@@ -363,9 +380,7 @@ with single_tab:
 
                 st.progress(
                     active_probability,
-                    text=(
-                        "Probability of ACTIVE"
-                    ),
+                    text="Probability of ACTIVE",
                 )
 
                 st.divider()
@@ -386,10 +401,10 @@ with single_tab:
                         "Molecular Structure"
                     )
 
-                    molecule_image = (
-                        render_molecule(
-                            cleaned_smiles
-                        )
+                    molecule_image = render_molecule(
+                        result[
+                            "canonical_smiles"
+                        ]
                     )
 
                     if molecule_image is not None:
@@ -399,6 +414,7 @@ with single_tab:
                             caption=(
                                 "RDKit molecular structure"
                             ),
+                            width="stretch",
                         )
 
                 with properties_col:
@@ -440,22 +456,56 @@ with single_tab:
 
                 st.divider()
 
+                # ---------------------------------------
+                # Prediction details
+                # ---------------------------------------
+
                 st.subheader(
                     "Prediction Details"
                 )
 
+                st.write(
+                    "**Canonical SMILES:**"
+                )
+
+                st.code(
+                    result[
+                        "canonical_smiles"
+                    ],
+                    language="text",
+                )
+
                 st.json(
                     {
-                        "smiles": cleaned_smiles,
+                        "smiles": result[
+                            "smiles"
+                        ],
+                        "canonical_smiles": result[
+                            "canonical_smiles"
+                        ],
                         "prediction": prediction,
-                        "active_probability": (
-                            active_probability
-                        ),
-                        "inactive_probability": (
-                            inactive_probability
-                        ),
+                        "prediction_label": result[
+                            "prediction_label"
+                        ],
+                        "active_probability": active_probability,
+                        "inactive_probability": inactive_probability,
                         "model": result[
                             "model"
+                        ],
+                        "target": result[
+                            "target"
+                        ],
+                        "target_chembl_id": result[
+                            "target_chembl_id"
+                        ],
+                        "activity_type": result[
+                            "activity_type"
+                        ],
+                        "activity_unit": result[
+                            "activity_unit"
+                        ],
+                        "active_threshold_nM": result[
+                            "active_threshold_nM"
                         ],
                     }
                 )
@@ -514,6 +564,10 @@ with batch_tab:
                 uploaded_file
             )
 
+            # -------------------------------------------
+            # Validate CSV
+            # -------------------------------------------
+
             if "smiles" not in batch_df.columns:
 
                 st.error(
@@ -543,6 +597,10 @@ with batch_tab:
                     "Processing may take some time."
                 )
 
+            # -------------------------------------------
+            # Prediction
+            # -------------------------------------------
+
             results = []
 
             progress_bar = st.progress(
@@ -558,9 +616,17 @@ with batch_tab:
                 batch_df["smiles"]
             ):
 
-                smiles_value = str(
+                if pd.isna(
                     smiles_value
-                ).strip()
+                ):
+
+                    smiles_value = ""
+
+                else:
+
+                    smiles_value = str(
+                        smiles_value
+                    ).strip()
 
                 try:
 
@@ -568,55 +634,38 @@ with batch_tab:
                         smiles_value
                     )
 
-                    descriptors = (
-                        result[
-                            "descriptors"
-                        ]
-                    )
+                    descriptors = result[
+                        "descriptors"
+                    ]
 
                     results.append(
                         {
-                            "prediction": (
-                                result[
-                                    "prediction"
-                                ]
-                            ),
-                            "active_probability": (
-                                result[
-                                    "active_probability"
-                                ]
-                            ),
-                            "inactive_probability": (
-                                result[
-                                    "inactive_probability"
-                                ]
-                            ),
-                            "molecular_weight": (
-                                descriptors[
-                                    "MolWt"
-                                ]
-                            ),
-                            "logp": (
-                                descriptors[
-                                    "LogP"
-                                ]
-                            ),
-                            "hbd": (
-                                descriptors[
-                                    "HBD"
-                                ]
-                            ),
-                            "hba": (
-                                descriptors[
-                                    "HBA"
-                                ]
-                            ),
-                            "tpsa": (
-                                descriptors[
-                                    "TPSA"
-                                ]
-                            ),
+                            "prediction": result[
+                                "prediction"
+                            ],
+                            "active_probability": result[
+                                "active_probability"
+                            ],
+                            "inactive_probability": result[
+                                "inactive_probability"
+                            ],
+                            "molecular_weight": descriptors[
+                                "MolWt"
+                            ],
+                            "logp": descriptors[
+                                "LogP"
+                            ],
+                            "hbd": descriptors[
+                                "HBD"
+                            ],
+                            "hba": descriptors[
+                                "HBA"
+                            ],
+                            "tpsa": descriptors[
+                                "TPSA"
+                            ],
                             "status": "OK",
+                            "error": "",
                         }
                     )
 
@@ -628,25 +677,16 @@ with batch_tab:
 
                     results.append(
                         {
-                            "prediction": (
-                                "INVALID"
-                            ),
-                            "active_probability": (
-                                None
-                            ),
-                            "inactive_probability": (
-                                None
-                            ),
-                            "molecular_weight": (
-                                None
-                            ),
+                            "prediction": "INVALID",
+                            "active_probability": None,
+                            "inactive_probability": None,
+                            "molecular_weight": None,
                             "logp": None,
                             "hbd": None,
                             "hba": None,
                             "tpsa": None,
-                            "status": str(
-                                exc
-                            ),
+                            "status": "ERROR",
+                            "error": str(exc),
                         }
                     )
 
@@ -670,8 +710,24 @@ with batch_tab:
                 ],
                 axis=1,
             )
-            
-            result_df = result_df.convert_dtypes()
+
+            # ------------------------------------------------
+            # Fix Arrow serialization
+            # ------------------------------------------------
+            #
+            # Streamlit/PyArrow can reject object columns
+            # containing mixed strings/numbers.
+            #
+
+            for column in result_df.columns:
+
+                if result_df[column].dtype == "object":
+
+                    result_df[column] = (
+                        result_df[column]
+                        .fillna("")
+                        .astype(str)
+                    )
 
             progress_bar.empty()
 
@@ -716,28 +772,38 @@ with batch_tab:
             )
 
             with c1:
+
                 st.metric(
                     "Total",
                     len(result_df),
                 )
 
             with c2:
+
                 st.metric(
                     "Active",
                     active_count,
                 )
 
             with c3:
+
                 st.metric(
                     "Inactive",
                     inactive_count,
                 )
 
             with c4:
+
                 st.metric(
                     "Invalid",
                     invalid_count,
                 )
+
+            st.caption(
+                f"Successfully predicted: "
+                f"{successful:,} / "
+                f"{len(result_df):,}"
+            )
 
             st.divider()
 
@@ -778,9 +844,9 @@ with batch_tab:
             )
 
         except (
-            TypeError,
+            pd.errors.ParserError,
+            UnicodeDecodeError,
             ValueError,
-            RuntimeError,
         ) as exc:
 
             st.error(
@@ -803,121 +869,136 @@ with performance_tab:
     )
 
     # ---------------------------------------------------
-    # Validation summary
+    # Final validation
     # ---------------------------------------------------
 
     if VALIDATION_PATH.exists():
 
-        import json
+        try:
 
-        validation = json.loads(
-            VALIDATION_PATH.read_text(
-                encoding="utf-8"
-            )
-        )
-
-        random_metrics = (
-            validation[
-                "random_split"
-            ]["metrics"]
-        )
-
-        scaffold_metrics = (
-            validation[
-                "scaffold_split"
-            ]["metrics"]
-        )
-
-        generalization = (
-            validation[
-                "generalization"
-            ]
-        )
-
-        st.subheader(
-            "Final Validation"
-        )
-
-        c1, c2, c3 = st.columns(
-            3
-        )
-
-        with c1:
-
-            st.metric(
-                "Random Split ROC-AUC",
-                f"{random_metrics['roc_auc']:.4f}",
+            validation = json.loads(
+                VALIDATION_PATH.read_text(
+                    encoding="utf-8"
+                )
             )
 
-        with c2:
-
-            st.metric(
-                "Scaffold Split ROC-AUC",
-                f"{scaffold_metrics['roc_auc']:.4f}",
+            random_metrics = (
+                validation[
+                    "random_split"
+                ]["metrics"]
             )
 
-        with c3:
-
-            st.metric(
-                "Generalization Gap",
-                f"{generalization['roc_auc_gap']:.4f}",
+            scaffold_metrics = (
+                validation[
+                    "scaffold_split"
+                ]["metrics"]
             )
 
-        st.divider()
-
-        # -----------------------------------------------
-        # Scaffold metrics
-        # -----------------------------------------------
-
-        st.subheader(
-            "Scaffold Split Metrics"
-        )
-
-        scaffold_table = pd.DataFrame(
-            {
-                "Metric": [
-                    "Accuracy",
-                    "Precision",
-                    "Recall",
-                    "F1",
-                    "ROC-AUC",
-                    "PR-AUC",
-                ],
-                "Score": [
-                    scaffold_metrics[
-                        "accuracy"
-                    ],
-                    scaffold_metrics[
-                        "precision"
-                    ],
-                    scaffold_metrics[
-                        "recall"
-                    ],
-                    scaffold_metrics[
-                        "f1"
-                    ],
-                    scaffold_metrics[
-                        "roc_auc"
-                    ],
-                    scaffold_metrics[
-                        "pr_auc"
-                    ],
-                ],
-            }
-        )
-
-        scaffold_table["Score"] = (
-            scaffold_table["Score"]
-            .map(
-                lambda x: f"{x:.4f}"
+            generalization = (
+                validation[
+                    "generalization"
+                ]
             )
-        )
 
-        st.dataframe(
-            scaffold_table,
-            hide_index=True,
-            width="stretch",
-        )
+            st.subheader(
+                "Final Validation"
+            )
+
+            c1, c2, c3 = st.columns(
+                3
+            )
+
+            with c1:
+
+                st.metric(
+                    "Random Split ROC-AUC",
+                    f"{random_metrics['roc_auc']:.4f}",
+                )
+
+            with c2:
+
+                st.metric(
+                    "Scaffold Split ROC-AUC",
+                    f"{scaffold_metrics['roc_auc']:.4f}",
+                )
+
+            with c3:
+
+                st.metric(
+                    "Generalization Gap",
+                    f"{generalization['roc_auc_gap']:.4f}",
+                )
+
+            st.divider()
+
+            # -----------------------------------------------
+            # Scaffold metrics
+            # -----------------------------------------------
+
+            st.subheader(
+                "Scaffold Split Metrics"
+            )
+
+            scaffold_table = pd.DataFrame(
+                {
+                    "Metric": [
+                        "Accuracy",
+                        "Precision",
+                        "Recall",
+                        "F1",
+                        "ROC-AUC",
+                        "PR-AUC",
+                    ],
+                    "Score": [
+                        scaffold_metrics[
+                            "accuracy"
+                        ],
+                        scaffold_metrics[
+                            "precision"
+                        ],
+                        scaffold_metrics[
+                            "recall"
+                        ],
+                        scaffold_metrics[
+                            "f1"
+                        ],
+                        scaffold_metrics[
+                            "roc_auc"
+                        ],
+                        scaffold_metrics[
+                            "pr_auc"
+                        ],
+                    ],
+                }
+            )
+
+            scaffold_table["Score"] = (
+                scaffold_table["Score"]
+                .map(
+                    lambda value: f"{value:.4f}"
+                )
+            )
+
+            st.dataframe(
+                scaffold_table,
+                hide_index=True,
+                width="stretch",
+            )
+
+        except (
+            KeyError,
+            TypeError,
+            ValueError,
+            json.JSONDecodeError,
+        ) as exc:
+
+            st.error(
+                "Unable to read model validation report."
+            )
+
+            st.exception(
+                exc
+            )
 
     else:
 
@@ -931,30 +1012,66 @@ with performance_tab:
 
     if COMPARISON_PATH.exists():
 
-        st.subheader(
-            "Model Comparison"
-        )
+        try:
 
-        comparison = pd.read_csv(
-            COMPARISON_PATH
-        )
+            st.subheader(
+                "Model Comparison"
+            )
 
-        st.dataframe(
-            comparison,
-            hide_index=True,
-            width="stretch",
-        )
+            comparison = pd.read_csv(
+                COMPARISON_PATH
+            )
 
-        st.bar_chart(
-            comparison.set_index(
-                "model"
-            )[
-                [
-                    "roc_auc",
-                    "pr_auc",
-                    "f1",
-                ]
-            ]
+            st.dataframe(
+                comparison,
+                hide_index=True,
+                width="stretch",
+            )
+
+            required_columns = {
+                "model",
+                "roc_auc",
+                "pr_auc",
+                "f1",
+            }
+
+            if required_columns.issubset(
+                comparison.columns
+            ):
+
+                chart_data = (
+                    comparison.set_index(
+                        "model"
+                    )[
+                        [
+                            "roc_auc",
+                            "pr_auc",
+                            "f1",
+                        ]
+                    ]
+                )
+
+                st.bar_chart(
+                    chart_data
+                )
+
+        except (
+            pd.errors.ParserError,
+            ValueError,
+        ) as exc:
+
+            st.error(
+                "Unable to read model comparison report."
+            )
+
+            st.exception(
+                exc
+            )
+
+    else:
+
+        st.warning(
+            "Model comparison report not found."
         )
 
     # ---------------------------------------------------
@@ -994,7 +1111,14 @@ with performance_tab:
             )
 
             st.image(
-                str(path)
+                str(path),
+                width="stretch",
+            )
+
+        else:
+
+            st.caption(
+                f"{filename} not found."
             )
 
 
