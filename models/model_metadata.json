@@ -1,10 +1,74 @@
 {
+  "model_name": "random_forest",
+  "model_type": "RandomForestClassifier",
+  "task": "binary_classification",
   "target": "EGFR",
   "target_chembl_id": "CHEMBL203",
   "activity_type": "IC50",
   "activity_unit": "nM",
-  "active_threshold_nM": 1000,
+  "active_threshold_nM": 1000.0,
+  "active_definition": "IC50 <= 1000 nM",
+  "inactive_definition": "IC50 > 1000 nM",
+  "feature_count": 2056,
+  "descriptor_count": 8,
+  "fingerprint_type": "Morgan",
   "morgan_radius": 2,
   "morgan_bits": 2048,
-  "random_state": 42
+  "descriptors": [
+    "MolWt",
+    "LogP",
+    "HBD",
+    "HBA",
+    "RotatableBonds",
+    "TPSA",
+    "RingCount",
+    "HeavyAtomCount"
+  ],
+  "fingerprint_prefix": "morgan_",
+  "model_selection": {
+    "selection_metric": "ROC-AUC",
+    "selected_model": "random_forest"
+  },
+  "validation": {
+    "random_split": {
+      "accuracy": 0.8921207658321061,
+      "precision": 0.9363636363636364,
+      "recall": 0.9010388190267906,
+      "f1": 0.9183616606297018,
+      "roc_auc": 0.951195292182876,
+      "pr_auc": 0.9742569858693262,
+      "cv_roc_auc_mean": 0.9478309658063988,
+      "cv_roc_auc_std": 0.005438985030325802
+    },
+    "scaffold_split": {
+      "accuracy": 0.8401173450678401,
+      "precision": 0.8760064412238325,
+      "recall": 0.8884050081654872,
+      "f1": 0.8821621621621621,
+      "roc_auc": 0.9118347574513893,
+      "pr_auc": 0.9550719051932537
+    },
+    "generalization_gap_random_vs_scaffold_roc_auc": 0.0394
+  },
+  "dataset": {
+    "dataset_name": "EGFR IC50 Bioactivity",
+    "final_compounds": 13577,
+    "active_compounds": 9142,
+    "inactive_compounds": 4435,
+    "active_fraction": 0.6733446269426235,
+    "inactive_fraction": 0.32665537305737646
+  },
+  "software": {
+    "python": "3.14",
+    "rdkit": "2026.3.5",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "scikit_learn": "1.9.0",
+    "joblib": "1.5.3"
+  },
+  "artifact": {
+    "filename": "bioactivity_model.joblib",
+    "format": "joblib",
+    "feature_order": "8 molecular descriptors followed by 2048 Morgan fingerprint bits"
+  }
 }

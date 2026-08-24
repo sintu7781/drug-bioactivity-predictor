@@ -104,17 +104,7 @@ st.markdown(
 
 @st.cache_resource
 def load_predictor() -> BioactivityPredictor:
-    if not MODEL_PATH.exists():
-        raise FileNotFoundError(
-            "Trained model not found.\n\n"
-            "Expected:\n"
-            f"{MODEL_PATH}\n\n"
-            "Run the training pipeline first."
-        )
-
-    return BioactivityPredictor(
-        MODEL_PATH
-    )
+    return BioactivityPredictor()
 
 
 try:

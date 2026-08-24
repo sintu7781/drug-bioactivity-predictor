@@ -5,6 +5,7 @@ from typing import Any
 
 import joblib
 import numpy as np
+from huggingface_hub import hf_hub_download
 from rdkit import Chem
 from rdkit.Chem import (
     Crippen,
@@ -17,6 +18,46 @@ from .features import (
     calculate_descriptors,
     generate_morgan_fingerprint,
 )
+
+HF_MODEL_REPO = "prime7781/drug-bioactivity-predictor"
+HF_MODEL_FILENAME = "bioactivity_model.joblib"
+
+def resolve_model_path(
+    model_path: str | Path | None = None,
+) -> Path:
+    """
+    Resolve the trained model path.
+
+    If a local model path is supplied and exists, use it.
+
+    If no local model path is supplied, download the model
+    from the public Hugging Face repository.
+    """
+
+    if model_path is not None:
+        local_path = Path(model_path)
+
+        if not local_path.exists():
+            raise FileNotFoundError(
+                f"Model not found: {local_path}"
+            )
+
+        return local_path
+
+    try:
+        downloaded_path = hf_hub_download(
+            repo_id=HF_MODEL_REPO,
+            filename=HF_MODEL_FILENAME,
+            repo_type="model",
+        )
+
+        return Path(downloaded_path)
+
+    except Exception as exc:
+        raise RuntimeError(
+            "Unable to download the trained model from "
+            f"Hugging Face repository: {HF_MODEL_REPO}"
+        ) from exc
 
 
 class BioactivityPredictor:
@@ -35,18 +76,12 @@ class BioactivityPredictor:
 
     def __init__(
         self,
-        model_path: str | Path,
+        model_path: str | Path | None = None,
     ) -> None:
 
-        self.model_path = Path(
+        self.model_path = resolve_model_path(
             model_path
         )
-
-        if not self.model_path.exists():
-            raise FileNotFoundError(
-                f"Model not found: "
-                f"{self.model_path}"
-            )
 
         artifact = joblib.load(
             self.model_path

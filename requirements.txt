@@ -8,3 +8,4 @@ rdkit==2026.3.5
 scikit-learn==1.9.0
 scipy==1.18.0
 streamlit==1.61.1
+huggingface_hub==1.28.0
