@@ -394,7 +394,7 @@ The model is available through an interactive Streamlit application.
 > Add your Streamlit Cloud URL here after deployment.
 
 ```text
-https://your-app-name.streamlit.app/
+https://drug-bioactivity-predictor.streamlit.app/
 ```
 
 The application allows users to:
