@@ -1,21 +1,36 @@
 # 🧬 Drug Bioactivity Predictor
 
-An end-to-end machine learning application for predicting **EGFR inhibitor bioactivity** from molecular SMILES strings.
+A machine learning system for predicting EGFR drug bioactivity from molecular SMILES using RDKit molecular descriptors and Morgan fingerprints.
 
-The project uses experimentally measured **IC50 activity data from ChEMBL**, performs molecular data curation and feature engineering with RDKit, trains multiple machine-learning classifiers, evaluates generalization using both random and scaffold splits, and deploys the final Random Forest model through a Streamlit web application.
+## Project Overview
+
+![Drug Bioactivity Predictor Architecture](docs/project-overview.png)
+
+This project implements an end-to-end drug bioactivity prediction pipeline:
+
+- ChEMBL data collection and curation
+- SMILES validation and preprocessing
+- Molecular descriptor calculation
+- Morgan fingerprint generation
+- Machine learning model training
+- Random Forest, Logistic Regression, and XGBoost comparison
+- Random and scaffold-based evaluation
+- Production inference
+- Streamlit web application
+- Hugging Face model deployment
 
 ---
 
 ## 🚀 Live Demo
 
 **Streamlit Application:**  
-https://drug-bioactivity-predictor.streamlit.app/
+[Open the Streamlit Application](https://drug-bioactivity-predictor.streamlit.app/)
 
 **Hugging Face Model:**  
-https://huggingface.co/prime7781/drug-bioactivity-predictor
+[View the Hugging Face Model](https://huggingface.co/prime7781/drug-bioactivity-predictor)
 
 **GitHub Repository:**  
-https://github.com/sintu7781/drug-bioactivity-predictor
+[View Source Code](https://github.com/sintu7781/drug-bioactivity-predictor)
 
 ---
 
