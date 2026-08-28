@@ -1,0 +1,802 @@
+2026-08-22 05:53:11,147 | INFO | __main__ | Fetching ChEMBL activity data: offset=0 limit=100
+2026-08-22 05:53:13,673 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:13,675 | INFO | __main__ | Collected 100 records / 26600
+2026-08-22 05:53:13,875 | INFO | __main__ | Fetching ChEMBL activity data: offset=100 limit=100
+2026-08-22 05:53:15,521 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:15,523 | INFO | __main__ | Collected 200 records / 26600
+2026-08-22 05:53:15,724 | INFO | __main__ | Fetching ChEMBL activity data: offset=200 limit=100
+2026-08-22 05:53:16,539 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:16,540 | INFO | __main__ | Collected 300 records / 26600
+2026-08-22 05:53:16,741 | INFO | __main__ | Fetching ChEMBL activity data: offset=300 limit=100
+2026-08-22 05:53:17,497 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:17,499 | INFO | __main__ | Collected 400 records / 26600
+2026-08-22 05:53:17,699 | INFO | __main__ | Fetching ChEMBL activity data: offset=400 limit=100
+2026-08-22 05:53:18,766 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:18,767 | INFO | __main__ | Collected 500 records / 26600
+2026-08-22 05:53:18,968 | INFO | __main__ | Fetching ChEMBL activity data: offset=500 limit=100
+2026-08-22 05:53:19,805 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:19,806 | INFO | __main__ | Collected 600 records / 26600
+2026-08-22 05:53:20,007 | INFO | __main__ | Fetching ChEMBL activity data: offset=600 limit=100
+2026-08-22 05:53:20,601 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:20,603 | INFO | __main__ | Collected 700 records / 26600
+2026-08-22 05:53:20,804 | INFO | __main__ | Fetching ChEMBL activity data: offset=700 limit=100
+2026-08-22 05:53:21,525 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:21,526 | INFO | __main__ | Collected 800 records / 26600
+2026-08-22 05:53:21,727 | INFO | __main__ | Fetching ChEMBL activity data: offset=800 limit=100
+2026-08-22 05:53:22,366 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:22,367 | INFO | __main__ | Collected 900 records / 26600
+2026-08-22 05:53:22,568 | INFO | __main__ | Fetching ChEMBL activity data: offset=900 limit=100
+2026-08-22 05:53:23,518 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:23,520 | INFO | __main__ | Collected 1000 records / 26600
+2026-08-22 05:53:23,720 | INFO | __main__ | Fetching ChEMBL activity data: offset=1000 limit=100
+2026-08-22 05:53:24,447 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:24,447 | INFO | __main__ | Collected 1100 records / 26600
+2026-08-22 05:53:24,649 | INFO | __main__ | Fetching ChEMBL activity data: offset=1100 limit=100
+2026-08-22 05:53:25,356 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:25,358 | INFO | __main__ | Collected 1200 records / 26600
+2026-08-22 05:53:25,559 | INFO | __main__ | Fetching ChEMBL activity data: offset=1200 limit=100
+2026-08-22 05:53:26,308 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:26,309 | INFO | __main__ | Collected 1300 records / 26600
+2026-08-22 05:53:26,509 | INFO | __main__ | Fetching ChEMBL activity data: offset=1300 limit=100
+2026-08-22 05:53:27,041 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:27,042 | INFO | __main__ | Collected 1400 records / 26600
+2026-08-22 05:53:27,242 | INFO | __main__ | Fetching ChEMBL activity data: offset=1400 limit=100
+2026-08-22 05:53:28,096 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:28,097 | INFO | __main__ | Collected 1500 records / 26600
+2026-08-22 05:53:28,298 | INFO | __main__ | Fetching ChEMBL activity data: offset=1500 limit=100
+2026-08-22 05:53:28,929 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:28,931 | INFO | __main__ | Collected 1600 records / 26600
+2026-08-22 05:53:29,131 | INFO | __main__ | Fetching ChEMBL activity data: offset=1600 limit=100
+2026-08-22 05:53:29,876 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:29,877 | INFO | __main__ | Collected 1700 records / 26600
+2026-08-22 05:53:30,078 | INFO | __main__ | Fetching ChEMBL activity data: offset=1700 limit=100
+2026-08-22 05:53:30,778 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:30,779 | INFO | __main__ | Collected 1800 records / 26600
+2026-08-22 05:53:30,980 | INFO | __main__ | Fetching ChEMBL activity data: offset=1800 limit=100
+2026-08-22 05:53:31,622 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:31,623 | INFO | __main__ | Collected 1900 records / 26600
+2026-08-22 05:53:31,823 | INFO | __main__ | Fetching ChEMBL activity data: offset=1900 limit=100
+2026-08-22 05:53:33,499 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:33,501 | INFO | __main__ | Collected 2000 records / 26600
+2026-08-22 05:53:33,701 | INFO | __main__ | Fetching ChEMBL activity data: offset=2000 limit=100
+2026-08-22 05:53:35,217 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:35,218 | INFO | __main__ | Collected 2100 records / 26600
+2026-08-22 05:53:35,418 | INFO | __main__ | Fetching ChEMBL activity data: offset=2100 limit=100
+2026-08-22 05:53:36,058 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:36,059 | INFO | __main__ | Collected 2200 records / 26600
+2026-08-22 05:53:36,259 | INFO | __main__ | Fetching ChEMBL activity data: offset=2200 limit=100
+2026-08-22 05:53:36,963 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:36,964 | INFO | __main__ | Collected 2300 records / 26600
+2026-08-22 05:53:37,165 | INFO | __main__ | Fetching ChEMBL activity data: offset=2300 limit=100
+2026-08-22 05:53:37,753 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:37,754 | INFO | __main__ | Collected 2400 records / 26600
+2026-08-22 05:53:37,955 | INFO | __main__ | Fetching ChEMBL activity data: offset=2400 limit=100
+2026-08-22 05:53:38,603 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:38,603 | INFO | __main__ | Collected 2500 records / 26600
+2026-08-22 05:53:38,804 | INFO | __main__ | Fetching ChEMBL activity data: offset=2500 limit=100
+2026-08-22 05:53:39,489 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:39,493 | INFO | __main__ | Collected 2600 records / 26600
+2026-08-22 05:53:39,693 | INFO | __main__ | Fetching ChEMBL activity data: offset=2600 limit=100
+2026-08-22 05:53:40,529 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:40,530 | INFO | __main__ | Collected 2700 records / 26600
+2026-08-22 05:53:40,731 | INFO | __main__ | Fetching ChEMBL activity data: offset=2700 limit=100
+2026-08-22 05:53:41,432 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:41,433 | INFO | __main__ | Collected 2800 records / 26600
+2026-08-22 05:53:41,634 | INFO | __main__ | Fetching ChEMBL activity data: offset=2800 limit=100
+2026-08-22 05:53:43,340 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:43,341 | INFO | __main__ | Collected 2900 records / 26600
+2026-08-22 05:53:43,541 | INFO | __main__ | Fetching ChEMBL activity data: offset=2900 limit=100
+2026-08-22 05:53:44,410 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:44,411 | INFO | __main__ | Collected 3000 records / 26600
+2026-08-22 05:53:44,612 | INFO | __main__ | Fetching ChEMBL activity data: offset=3000 limit=100
+2026-08-22 05:53:45,332 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:45,333 | INFO | __main__ | Collected 3100 records / 26600
+2026-08-22 05:53:45,533 | INFO | __main__ | Fetching ChEMBL activity data: offset=3100 limit=100
+2026-08-22 05:53:46,273 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:46,274 | INFO | __main__ | Collected 3200 records / 26600
+2026-08-22 05:53:46,474 | INFO | __main__ | Fetching ChEMBL activity data: offset=3200 limit=100
+2026-08-22 05:53:47,870 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:47,870 | INFO | __main__ | Collected 3300 records / 26600
+2026-08-22 05:53:48,071 | INFO | __main__ | Fetching ChEMBL activity data: offset=3300 limit=100
+2026-08-22 05:53:48,806 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:48,808 | INFO | __main__ | Collected 3400 records / 26600
+2026-08-22 05:53:49,009 | INFO | __main__ | Fetching ChEMBL activity data: offset=3400 limit=100
+2026-08-22 05:53:49,721 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:49,723 | INFO | __main__ | Collected 3500 records / 26600
+2026-08-22 05:53:49,924 | INFO | __main__ | Fetching ChEMBL activity data: offset=3500 limit=100
+2026-08-22 05:53:50,685 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:50,686 | INFO | __main__ | Collected 3600 records / 26600
+2026-08-22 05:53:50,886 | INFO | __main__ | Fetching ChEMBL activity data: offset=3600 limit=100
+2026-08-22 05:53:51,648 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:51,650 | INFO | __main__ | Collected 3700 records / 26600
+2026-08-22 05:53:51,850 | INFO | __main__ | Fetching ChEMBL activity data: offset=3700 limit=100
+2026-08-22 05:53:52,599 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:52,600 | INFO | __main__ | Collected 3800 records / 26600
+2026-08-22 05:53:52,800 | INFO | __main__ | Fetching ChEMBL activity data: offset=3800 limit=100
+2026-08-22 05:53:53,572 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:53,573 | INFO | __main__ | Collected 3900 records / 26600
+2026-08-22 05:53:53,774 | INFO | __main__ | Fetching ChEMBL activity data: offset=3900 limit=100
+2026-08-22 05:53:55,086 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:55,087 | INFO | __main__ | Collected 4000 records / 26600
+2026-08-22 05:53:55,288 | INFO | __main__ | Fetching ChEMBL activity data: offset=4000 limit=100
+2026-08-22 05:53:56,001 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:56,002 | INFO | __main__ | Collected 4100 records / 26600
+2026-08-22 05:53:56,202 | INFO | __main__ | Fetching ChEMBL activity data: offset=4100 limit=100
+2026-08-22 05:53:56,900 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:56,901 | INFO | __main__ | Collected 4200 records / 26600
+2026-08-22 05:53:57,102 | INFO | __main__ | Fetching ChEMBL activity data: offset=4200 limit=100
+2026-08-22 05:53:57,812 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:57,813 | INFO | __main__ | Collected 4300 records / 26600
+2026-08-22 05:53:58,014 | INFO | __main__ | Fetching ChEMBL activity data: offset=4300 limit=100
+2026-08-22 05:53:58,799 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:58,800 | INFO | __main__ | Collected 4400 records / 26600
+2026-08-22 05:53:59,001 | INFO | __main__ | Fetching ChEMBL activity data: offset=4400 limit=100
+2026-08-22 05:53:59,759 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:53:59,759 | INFO | __main__ | Collected 4500 records / 26600
+2026-08-22 05:53:59,960 | INFO | __main__ | Fetching ChEMBL activity data: offset=4500 limit=100
+2026-08-22 05:54:00,673 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:00,674 | INFO | __main__ | Collected 4600 records / 26600
+2026-08-22 05:54:00,874 | INFO | __main__ | Fetching ChEMBL activity data: offset=4600 limit=100
+2026-08-22 05:54:01,631 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:01,632 | INFO | __main__ | Collected 4700 records / 26600
+2026-08-22 05:54:01,832 | INFO | __main__ | Fetching ChEMBL activity data: offset=4700 limit=100
+2026-08-22 05:54:02,521 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:02,522 | INFO | __main__ | Collected 4800 records / 26600
+2026-08-22 05:54:02,722 | INFO | __main__ | Fetching ChEMBL activity data: offset=4800 limit=100
+2026-08-22 05:54:03,444 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:03,445 | INFO | __main__ | Collected 4900 records / 26600
+2026-08-22 05:54:03,645 | INFO | __main__ | Fetching ChEMBL activity data: offset=4900 limit=100
+2026-08-22 05:54:04,600 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:04,601 | INFO | __main__ | Collected 5000 records / 26600
+2026-08-22 05:54:04,802 | INFO | __main__ | Fetching ChEMBL activity data: offset=5000 limit=100
+2026-08-22 05:54:05,612 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:05,613 | INFO | __main__ | Collected 5100 records / 26600
+2026-08-22 05:54:05,814 | INFO | __main__ | Fetching ChEMBL activity data: offset=5100 limit=100
+2026-08-22 05:54:06,553 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:06,554 | INFO | __main__ | Collected 5200 records / 26600
+2026-08-22 05:54:06,755 | INFO | __main__ | Fetching ChEMBL activity data: offset=5200 limit=100
+2026-08-22 05:54:07,563 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:07,564 | INFO | __main__ | Collected 5300 records / 26600
+2026-08-22 05:54:07,765 | INFO | __main__ | Fetching ChEMBL activity data: offset=5300 limit=100
+2026-08-22 05:54:08,711 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:08,712 | INFO | __main__ | Collected 5400 records / 26600
+2026-08-22 05:54:08,912 | INFO | __main__ | Fetching ChEMBL activity data: offset=5400 limit=100
+2026-08-22 05:54:10,080 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:10,081 | INFO | __main__ | Collected 5500 records / 26600
+2026-08-22 05:54:10,282 | INFO | __main__ | Fetching ChEMBL activity data: offset=5500 limit=100
+2026-08-22 05:54:11,033 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:11,034 | INFO | __main__ | Collected 5600 records / 26600
+2026-08-22 05:54:11,235 | INFO | __main__ | Fetching ChEMBL activity data: offset=5600 limit=100
+2026-08-22 05:54:12,009 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:12,010 | INFO | __main__ | Collected 5700 records / 26600
+2026-08-22 05:54:12,211 | INFO | __main__ | Fetching ChEMBL activity data: offset=5700 limit=100
+2026-08-22 05:54:12,935 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:12,936 | INFO | __main__ | Collected 5800 records / 26600
+2026-08-22 05:54:13,137 | INFO | __main__ | Fetching ChEMBL activity data: offset=5800 limit=100
+2026-08-22 05:54:13,927 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:13,928 | INFO | __main__ | Collected 5900 records / 26600
+2026-08-22 05:54:14,129 | INFO | __main__ | Fetching ChEMBL activity data: offset=5900 limit=100
+2026-08-22 05:54:15,084 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:15,085 | INFO | __main__ | Collected 6000 records / 26600
+2026-08-22 05:54:15,285 | INFO | __main__ | Fetching ChEMBL activity data: offset=6000 limit=100
+2026-08-22 05:54:15,999 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:15,999 | INFO | __main__ | Collected 6100 records / 26600
+2026-08-22 05:54:16,200 | INFO | __main__ | Fetching ChEMBL activity data: offset=6100 limit=100
+2026-08-22 05:54:16,963 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:16,964 | INFO | __main__ | Collected 6200 records / 26600
+2026-08-22 05:54:17,165 | INFO | __main__ | Fetching ChEMBL activity data: offset=6200 limit=100
+2026-08-22 05:54:17,960 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:17,961 | INFO | __main__ | Collected 6300 records / 26600
+2026-08-22 05:54:18,161 | INFO | __main__ | Fetching ChEMBL activity data: offset=6300 limit=100
+2026-08-22 05:54:18,963 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:18,964 | INFO | __main__ | Collected 6400 records / 26600
+2026-08-22 05:54:19,165 | INFO | __main__ | Fetching ChEMBL activity data: offset=6400 limit=100
+2026-08-22 05:54:19,921 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:19,924 | INFO | __main__ | Collected 6500 records / 26600
+2026-08-22 05:54:20,124 | INFO | __main__ | Fetching ChEMBL activity data: offset=6500 limit=100
+2026-08-22 05:54:20,883 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:20,884 | INFO | __main__ | Collected 6600 records / 26600
+2026-08-22 05:54:21,085 | INFO | __main__ | Fetching ChEMBL activity data: offset=6600 limit=100
+2026-08-22 05:54:21,844 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:21,846 | INFO | __main__ | Collected 6700 records / 26600
+2026-08-22 05:54:22,046 | INFO | __main__ | Fetching ChEMBL activity data: offset=6700 limit=100
+2026-08-22 05:54:22,654 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:22,655 | INFO | __main__ | Collected 6800 records / 26600
+2026-08-22 05:54:22,855 | INFO | __main__ | Fetching ChEMBL activity data: offset=6800 limit=100
+2026-08-22 05:54:23,443 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:23,444 | INFO | __main__ | Collected 6900 records / 26600
+2026-08-22 05:54:23,645 | INFO | __main__ | Fetching ChEMBL activity data: offset=6900 limit=100
+2026-08-22 05:54:24,601 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:24,601 | INFO | __main__ | Collected 7000 records / 26600
+2026-08-22 05:54:24,802 | INFO | __main__ | Fetching ChEMBL activity data: offset=7000 limit=100
+2026-08-22 05:54:25,291 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:25,293 | INFO | __main__ | Collected 7100 records / 26600
+2026-08-22 05:54:25,493 | INFO | __main__ | Fetching ChEMBL activity data: offset=7100 limit=100
+2026-08-22 05:54:26,073 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:26,075 | INFO | __main__ | Collected 7200 records / 26600
+2026-08-22 05:54:26,275 | INFO | __main__ | Fetching ChEMBL activity data: offset=7200 limit=100
+2026-08-22 05:54:27,202 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:27,204 | INFO | __main__ | Collected 7300 records / 26600
+2026-08-22 05:54:27,405 | INFO | __main__ | Fetching ChEMBL activity data: offset=7300 limit=100
+2026-08-22 05:54:28,515 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:28,516 | INFO | __main__ | Collected 7400 records / 26600
+2026-08-22 05:54:28,716 | INFO | __main__ | Fetching ChEMBL activity data: offset=7400 limit=100
+2026-08-22 05:54:29,685 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:29,686 | INFO | __main__ | Collected 7500 records / 26600
+2026-08-22 05:54:29,886 | INFO | __main__ | Fetching ChEMBL activity data: offset=7500 limit=100
+2026-08-22 05:54:30,533 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:30,534 | INFO | __main__ | Collected 7600 records / 26600
+2026-08-22 05:54:30,735 | INFO | __main__ | Fetching ChEMBL activity data: offset=7600 limit=100
+2026-08-22 05:54:31,491 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:31,492 | INFO | __main__ | Collected 7700 records / 26600
+2026-08-22 05:54:31,692 | INFO | __main__ | Fetching ChEMBL activity data: offset=7700 limit=100
+2026-08-22 05:54:32,432 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:32,434 | INFO | __main__ | Collected 7800 records / 26600
+2026-08-22 05:54:32,634 | INFO | __main__ | Fetching ChEMBL activity data: offset=7800 limit=100
+2026-08-22 05:54:33,470 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:33,471 | INFO | __main__ | Collected 7900 records / 26600
+2026-08-22 05:54:33,672 | INFO | __main__ | Fetching ChEMBL activity data: offset=7900 limit=100
+2026-08-22 05:54:36,124 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:36,125 | INFO | __main__ | Collected 8000 records / 26600
+2026-08-22 05:54:36,326 | INFO | __main__ | Fetching ChEMBL activity data: offset=8000 limit=100
+2026-08-22 05:54:36,910 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:36,912 | INFO | __main__ | Collected 8100 records / 26600
+2026-08-22 05:54:37,112 | INFO | __main__ | Fetching ChEMBL activity data: offset=8100 limit=100
+2026-08-22 05:54:37,828 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:37,829 | INFO | __main__ | Collected 8200 records / 26600
+2026-08-22 05:54:38,030 | INFO | __main__ | Fetching ChEMBL activity data: offset=8200 limit=100
+2026-08-22 05:54:38,936 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:38,938 | INFO | __main__ | Collected 8300 records / 26600
+2026-08-22 05:54:39,139 | INFO | __main__ | Fetching ChEMBL activity data: offset=8300 limit=100
+2026-08-22 05:54:39,725 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:39,727 | INFO | __main__ | Collected 8400 records / 26600
+2026-08-22 05:54:39,928 | INFO | __main__ | Fetching ChEMBL activity data: offset=8400 limit=100
+2026-08-22 05:54:40,682 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:40,683 | INFO | __main__ | Collected 8500 records / 26600
+2026-08-22 05:54:40,884 | INFO | __main__ | Fetching ChEMBL activity data: offset=8500 limit=100
+2026-08-22 05:54:41,491 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:41,492 | INFO | __main__ | Collected 8600 records / 26600
+2026-08-22 05:54:41,693 | INFO | __main__ | Fetching ChEMBL activity data: offset=8600 limit=100
+2026-08-22 05:54:42,245 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:42,246 | INFO | __main__ | Collected 8700 records / 26600
+2026-08-22 05:54:42,447 | INFO | __main__ | Fetching ChEMBL activity data: offset=8700 limit=100
+2026-08-22 05:54:43,682 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:43,682 | INFO | __main__ | Collected 8800 records / 26600
+2026-08-22 05:54:43,883 | INFO | __main__ | Fetching ChEMBL activity data: offset=8800 limit=100
+2026-08-22 05:54:44,687 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:44,688 | INFO | __main__ | Collected 8900 records / 26600
+2026-08-22 05:54:44,889 | INFO | __main__ | Fetching ChEMBL activity data: offset=8900 limit=100
+2026-08-22 05:54:45,989 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:45,991 | INFO | __main__ | Collected 9000 records / 26600
+2026-08-22 05:54:46,192 | INFO | __main__ | Fetching ChEMBL activity data: offset=9000 limit=100
+2026-08-22 05:54:46,975 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:46,976 | INFO | __main__ | Collected 9100 records / 26600
+2026-08-22 05:54:47,177 | INFO | __main__ | Fetching ChEMBL activity data: offset=9100 limit=100
+2026-08-22 05:54:47,804 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:47,805 | INFO | __main__ | Collected 9200 records / 26600
+2026-08-22 05:54:48,007 | INFO | __main__ | Fetching ChEMBL activity data: offset=9200 limit=100
+2026-08-22 05:54:48,723 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:48,725 | INFO | __main__ | Collected 9300 records / 26600
+2026-08-22 05:54:48,925 | INFO | __main__ | Fetching ChEMBL activity data: offset=9300 limit=100
+2026-08-22 05:54:49,875 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:49,876 | INFO | __main__ | Collected 9400 records / 26600
+2026-08-22 05:54:50,077 | INFO | __main__ | Fetching ChEMBL activity data: offset=9400 limit=100
+2026-08-22 05:54:50,921 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:50,922 | INFO | __main__ | Collected 9500 records / 26600
+2026-08-22 05:54:51,123 | INFO | __main__ | Fetching ChEMBL activity data: offset=9500 limit=100
+2026-08-22 05:54:52,598 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:52,600 | INFO | __main__ | Collected 9600 records / 26600
+2026-08-22 05:54:52,800 | INFO | __main__ | Fetching ChEMBL activity data: offset=9600 limit=100
+2026-08-22 05:54:53,615 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:53,617 | INFO | __main__ | Collected 9700 records / 26600
+2026-08-22 05:54:53,817 | INFO | __main__ | Fetching ChEMBL activity data: offset=9700 limit=100
+2026-08-22 05:54:54,454 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:54,455 | INFO | __main__ | Collected 9800 records / 26600
+2026-08-22 05:54:54,656 | INFO | __main__ | Fetching ChEMBL activity data: offset=9800 limit=100
+2026-08-22 05:54:55,218 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:55,220 | INFO | __main__ | Collected 9900 records / 26600
+2026-08-22 05:54:55,420 | INFO | __main__ | Fetching ChEMBL activity data: offset=9900 limit=100
+2026-08-22 05:54:57,048 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:57,049 | INFO | __main__ | Collected 10000 records / 26600
+2026-08-22 05:54:57,250 | INFO | __main__ | Fetching ChEMBL activity data: offset=10000 limit=100
+2026-08-22 05:54:57,959 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:57,961 | INFO | __main__ | Collected 10100 records / 26600
+2026-08-22 05:54:58,161 | INFO | __main__ | Fetching ChEMBL activity data: offset=10100 limit=100
+2026-08-22 05:54:59,769 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:54:59,770 | INFO | __main__ | Collected 10200 records / 26600
+2026-08-22 05:54:59,971 | INFO | __main__ | Fetching ChEMBL activity data: offset=10200 limit=100
+2026-08-22 05:55:00,844 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:00,846 | INFO | __main__ | Collected 10300 records / 26600
+2026-08-22 05:55:01,046 | INFO | __main__ | Fetching ChEMBL activity data: offset=10300 limit=100
+2026-08-22 05:55:01,654 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:01,655 | INFO | __main__ | Collected 10400 records / 26600
+2026-08-22 05:55:01,856 | INFO | __main__ | Fetching ChEMBL activity data: offset=10400 limit=100
+2026-08-22 05:55:03,173 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:03,174 | INFO | __main__ | Collected 10500 records / 26600
+2026-08-22 05:55:03,375 | INFO | __main__ | Fetching ChEMBL activity data: offset=10500 limit=100
+2026-08-22 05:55:03,969 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:03,971 | INFO | __main__ | Collected 10600 records / 26600
+2026-08-22 05:55:04,171 | INFO | __main__ | Fetching ChEMBL activity data: offset=10600 limit=100
+2026-08-22 05:55:04,913 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:04,915 | INFO | __main__ | Collected 10700 records / 26600
+2026-08-22 05:55:05,115 | INFO | __main__ | Fetching ChEMBL activity data: offset=10700 limit=100
+2026-08-22 05:55:05,774 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:05,775 | INFO | __main__ | Collected 10800 records / 26600
+2026-08-22 05:55:05,976 | INFO | __main__ | Fetching ChEMBL activity data: offset=10800 limit=100
+2026-08-22 05:55:06,803 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:06,803 | INFO | __main__ | Collected 10900 records / 26600
+2026-08-22 05:55:07,004 | INFO | __main__ | Fetching ChEMBL activity data: offset=10900 limit=100
+2026-08-22 05:55:08,288 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:08,290 | INFO | __main__ | Collected 11000 records / 26600
+2026-08-22 05:55:08,490 | INFO | __main__ | Fetching ChEMBL activity data: offset=11000 limit=100
+2026-08-22 05:55:09,211 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:09,211 | INFO | __main__ | Collected 11100 records / 26600
+2026-08-22 05:55:09,412 | INFO | __main__ | Fetching ChEMBL activity data: offset=11100 limit=100
+2026-08-22 05:55:10,177 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:10,179 | INFO | __main__ | Collected 11200 records / 26600
+2026-08-22 05:55:10,380 | INFO | __main__ | Fetching ChEMBL activity data: offset=11200 limit=100
+2026-08-22 05:55:11,434 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:11,436 | INFO | __main__ | Collected 11300 records / 26600
+2026-08-22 05:55:11,636 | INFO | __main__ | Fetching ChEMBL activity data: offset=11300 limit=100
+2026-08-22 05:55:12,954 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:12,955 | INFO | __main__ | Collected 11400 records / 26600
+2026-08-22 05:55:13,156 | INFO | __main__ | Fetching ChEMBL activity data: offset=11400 limit=100
+2026-08-22 05:55:14,047 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:14,048 | INFO | __main__ | Collected 11500 records / 26600
+2026-08-22 05:55:14,248 | INFO | __main__ | Fetching ChEMBL activity data: offset=11500 limit=100
+2026-08-22 05:55:15,052 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:15,053 | INFO | __main__ | Collected 11600 records / 26600
+2026-08-22 05:55:15,254 | INFO | __main__ | Fetching ChEMBL activity data: offset=11600 limit=100
+2026-08-22 05:55:16,050 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:16,052 | INFO | __main__ | Collected 11700 records / 26600
+2026-08-22 05:55:16,253 | INFO | __main__ | Fetching ChEMBL activity data: offset=11700 limit=100
+2026-08-22 05:55:16,938 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:16,939 | INFO | __main__ | Collected 11800 records / 26600
+2026-08-22 05:55:17,139 | INFO | __main__ | Fetching ChEMBL activity data: offset=11800 limit=100
+2026-08-22 05:55:17,972 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:17,978 | INFO | __main__ | Collected 11900 records / 26600
+2026-08-22 05:55:18,179 | INFO | __main__ | Fetching ChEMBL activity data: offset=11900 limit=100
+2026-08-22 05:55:19,326 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:19,327 | INFO | __main__ | Collected 12000 records / 26600
+2026-08-22 05:55:19,528 | INFO | __main__ | Fetching ChEMBL activity data: offset=12000 limit=100
+2026-08-22 05:55:20,260 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:20,262 | INFO | __main__ | Collected 12100 records / 26600
+2026-08-22 05:55:20,462 | INFO | __main__ | Fetching ChEMBL activity data: offset=12100 limit=100
+2026-08-22 05:55:21,138 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:21,139 | INFO | __main__ | Collected 12200 records / 26600
+2026-08-22 05:55:21,339 | INFO | __main__ | Fetching ChEMBL activity data: offset=12200 limit=100
+2026-08-22 05:55:21,884 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:21,885 | INFO | __main__ | Collected 12300 records / 26600
+2026-08-22 05:55:22,086 | INFO | __main__ | Fetching ChEMBL activity data: offset=12300 limit=100
+2026-08-22 05:55:22,652 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:22,654 | INFO | __main__ | Collected 12400 records / 26600
+2026-08-22 05:55:22,854 | INFO | __main__ | Fetching ChEMBL activity data: offset=12400 limit=100
+2026-08-22 05:55:23,973 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:23,975 | INFO | __main__ | Collected 12500 records / 26600
+2026-08-22 05:55:24,176 | INFO | __main__ | Fetching ChEMBL activity data: offset=12500 limit=100
+2026-08-22 05:55:24,798 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:24,799 | INFO | __main__ | Collected 12600 records / 26600
+2026-08-22 05:55:25,000 | INFO | __main__ | Fetching ChEMBL activity data: offset=12600 limit=100
+2026-08-22 05:55:25,653 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:25,654 | INFO | __main__ | Collected 12700 records / 26600
+2026-08-22 05:55:25,855 | INFO | __main__ | Fetching ChEMBL activity data: offset=12700 limit=100
+2026-08-22 05:55:26,520 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:26,521 | INFO | __main__ | Collected 12800 records / 26600
+2026-08-22 05:55:26,721 | INFO | __main__ | Fetching ChEMBL activity data: offset=12800 limit=100
+2026-08-22 05:55:27,513 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:27,515 | INFO | __main__ | Collected 12900 records / 26600
+2026-08-22 05:55:27,716 | INFO | __main__ | Fetching ChEMBL activity data: offset=12900 limit=100
+2026-08-22 05:55:28,521 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:28,522 | INFO | __main__ | Collected 13000 records / 26600
+2026-08-22 05:55:28,723 | INFO | __main__ | Fetching ChEMBL activity data: offset=13000 limit=100
+2026-08-22 05:55:29,282 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:29,284 | INFO | __main__ | Collected 13100 records / 26600
+2026-08-22 05:55:29,484 | INFO | __main__ | Fetching ChEMBL activity data: offset=13100 limit=100
+2026-08-22 05:55:30,018 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:30,019 | INFO | __main__ | Collected 13200 records / 26600
+2026-08-22 05:55:30,220 | INFO | __main__ | Fetching ChEMBL activity data: offset=13200 limit=100
+2026-08-22 05:55:30,766 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:30,767 | INFO | __main__ | Collected 13300 records / 26600
+2026-08-22 05:55:30,968 | INFO | __main__ | Fetching ChEMBL activity data: offset=13300 limit=100
+2026-08-22 05:55:32,392 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:32,394 | INFO | __main__ | Collected 13400 records / 26600
+2026-08-22 05:55:32,594 | INFO | __main__ | Fetching ChEMBL activity data: offset=13400 limit=100
+2026-08-22 05:55:34,026 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:34,028 | INFO | __main__ | Collected 13500 records / 26600
+2026-08-22 05:55:34,229 | INFO | __main__ | Fetching ChEMBL activity data: offset=13500 limit=100
+2026-08-22 05:55:34,913 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:34,915 | INFO | __main__ | Collected 13600 records / 26600
+2026-08-22 05:55:35,116 | INFO | __main__ | Fetching ChEMBL activity data: offset=13600 limit=100
+2026-08-22 05:55:35,652 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:35,653 | INFO | __main__ | Collected 13700 records / 26600
+2026-08-22 05:55:35,853 | INFO | __main__ | Fetching ChEMBL activity data: offset=13700 limit=100
+2026-08-22 05:55:36,590 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:36,591 | INFO | __main__ | Collected 13800 records / 26600
+2026-08-22 05:55:36,792 | INFO | __main__ | Fetching ChEMBL activity data: offset=13800 limit=100
+2026-08-22 05:55:37,424 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:37,425 | INFO | __main__ | Collected 13900 records / 26600
+2026-08-22 05:55:37,625 | INFO | __main__ | Fetching ChEMBL activity data: offset=13900 limit=100
+2026-08-22 05:55:38,564 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:38,565 | INFO | __main__ | Collected 14000 records / 26600
+2026-08-22 05:55:38,765 | INFO | __main__ | Fetching ChEMBL activity data: offset=14000 limit=100
+2026-08-22 05:55:39,418 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:39,419 | INFO | __main__ | Collected 14100 records / 26600
+2026-08-22 05:55:39,620 | INFO | __main__ | Fetching ChEMBL activity data: offset=14100 limit=100
+2026-08-22 05:55:40,194 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:40,195 | INFO | __main__ | Collected 14200 records / 26600
+2026-08-22 05:55:40,396 | INFO | __main__ | Fetching ChEMBL activity data: offset=14200 limit=100
+2026-08-22 05:55:41,085 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:41,087 | INFO | __main__ | Collected 14300 records / 26600
+2026-08-22 05:55:41,288 | INFO | __main__ | Fetching ChEMBL activity data: offset=14300 limit=100
+2026-08-22 05:55:42,189 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:42,209 | INFO | __main__ | Collected 14400 records / 26600
+2026-08-22 05:55:42,410 | INFO | __main__ | Fetching ChEMBL activity data: offset=14400 limit=100
+2026-08-22 05:55:42,939 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:42,940 | INFO | __main__ | Collected 14500 records / 26600
+2026-08-22 05:55:43,141 | INFO | __main__ | Fetching ChEMBL activity data: offset=14500 limit=100
+2026-08-22 05:55:43,966 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:43,966 | INFO | __main__ | Collected 14600 records / 26600
+2026-08-22 05:55:44,167 | INFO | __main__ | Fetching ChEMBL activity data: offset=14600 limit=100
+2026-08-22 05:55:44,799 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:44,801 | INFO | __main__ | Collected 14700 records / 26600
+2026-08-22 05:55:45,002 | INFO | __main__ | Fetching ChEMBL activity data: offset=14700 limit=100
+2026-08-22 05:55:45,519 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:45,520 | INFO | __main__ | Collected 14800 records / 26600
+2026-08-22 05:55:45,721 | INFO | __main__ | Fetching ChEMBL activity data: offset=14800 limit=100
+2026-08-22 05:55:46,335 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:46,337 | INFO | __main__ | Collected 14900 records / 26600
+2026-08-22 05:55:46,538 | INFO | __main__ | Fetching ChEMBL activity data: offset=14900 limit=100
+2026-08-22 05:55:47,406 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:47,408 | INFO | __main__ | Collected 15000 records / 26600
+2026-08-22 05:55:47,609 | INFO | __main__ | Fetching ChEMBL activity data: offset=15000 limit=100
+2026-08-22 05:55:48,318 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:48,320 | INFO | __main__ | Collected 15100 records / 26600
+2026-08-22 05:55:48,521 | INFO | __main__ | Fetching ChEMBL activity data: offset=15100 limit=100
+2026-08-22 05:55:49,165 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:49,166 | INFO | __main__ | Collected 15200 records / 26600
+2026-08-22 05:55:49,367 | INFO | __main__ | Fetching ChEMBL activity data: offset=15200 limit=100
+2026-08-22 05:55:50,058 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:50,060 | INFO | __main__ | Collected 15300 records / 26600
+2026-08-22 05:55:50,260 | INFO | __main__ | Fetching ChEMBL activity data: offset=15300 limit=100
+2026-08-22 05:55:50,933 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:50,935 | INFO | __main__ | Collected 15400 records / 26600
+2026-08-22 05:55:51,135 | INFO | __main__ | Fetching ChEMBL activity data: offset=15400 limit=100
+2026-08-22 05:55:52,073 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:52,075 | INFO | __main__ | Collected 15500 records / 26600
+2026-08-22 05:55:52,276 | INFO | __main__ | Fetching ChEMBL activity data: offset=15500 limit=100
+2026-08-22 05:55:52,853 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:52,855 | INFO | __main__ | Collected 15600 records / 26600
+2026-08-22 05:55:53,056 | INFO | __main__ | Fetching ChEMBL activity data: offset=15600 limit=100
+2026-08-22 05:55:53,731 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:53,732 | INFO | __main__ | Collected 15700 records / 26600
+2026-08-22 05:55:53,933 | INFO | __main__ | Fetching ChEMBL activity data: offset=15700 limit=100
+2026-08-22 05:55:54,999 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:55,001 | INFO | __main__ | Collected 15800 records / 26600
+2026-08-22 05:55:55,201 | INFO | __main__ | Fetching ChEMBL activity data: offset=15800 limit=100
+2026-08-22 05:55:55,994 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:55,996 | INFO | __main__ | Collected 15900 records / 26600
+2026-08-22 05:55:56,197 | INFO | __main__ | Fetching ChEMBL activity data: offset=15900 limit=100
+2026-08-22 05:55:57,044 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:57,046 | INFO | __main__ | Collected 16000 records / 26600
+2026-08-22 05:55:57,246 | INFO | __main__ | Fetching ChEMBL activity data: offset=16000 limit=100
+2026-08-22 05:55:57,931 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:57,933 | INFO | __main__ | Collected 16100 records / 26600
+2026-08-22 05:55:58,134 | INFO | __main__ | Fetching ChEMBL activity data: offset=16100 limit=100
+2026-08-22 05:55:58,800 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:58,802 | INFO | __main__ | Collected 16200 records / 26600
+2026-08-22 05:55:59,003 | INFO | __main__ | Fetching ChEMBL activity data: offset=16200 limit=100
+2026-08-22 05:55:59,652 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:55:59,653 | INFO | __main__ | Collected 16300 records / 26600
+2026-08-22 05:55:59,854 | INFO | __main__ | Fetching ChEMBL activity data: offset=16300 limit=100
+2026-08-22 05:56:00,573 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:00,575 | INFO | __main__ | Collected 16400 records / 26600
+2026-08-22 05:56:00,775 | INFO | __main__ | Fetching ChEMBL activity data: offset=16400 limit=100
+2026-08-22 05:56:01,484 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:01,486 | INFO | __main__ | Collected 16500 records / 26600
+2026-08-22 05:56:01,686 | INFO | __main__ | Fetching ChEMBL activity data: offset=16500 limit=100
+2026-08-22 05:56:02,412 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:02,413 | INFO | __main__ | Collected 16600 records / 26600
+2026-08-22 05:56:02,614 | INFO | __main__ | Fetching ChEMBL activity data: offset=16600 limit=100
+2026-08-22 05:56:03,168 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:03,169 | INFO | __main__ | Collected 16700 records / 26600
+2026-08-22 05:56:03,370 | INFO | __main__ | Fetching ChEMBL activity data: offset=16700 limit=100
+2026-08-22 05:56:04,174 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:04,175 | INFO | __main__ | Collected 16800 records / 26600
+2026-08-22 05:56:04,375 | INFO | __main__ | Fetching ChEMBL activity data: offset=16800 limit=100
+2026-08-22 05:56:05,040 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:05,042 | INFO | __main__ | Collected 16900 records / 26600
+2026-08-22 05:56:05,243 | INFO | __main__ | Fetching ChEMBL activity data: offset=16900 limit=100
+2026-08-22 05:56:06,045 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:06,046 | INFO | __main__ | Collected 17000 records / 26600
+2026-08-22 05:56:06,246 | INFO | __main__ | Fetching ChEMBL activity data: offset=17000 limit=100
+2026-08-22 05:56:07,007 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:07,008 | INFO | __main__ | Collected 17100 records / 26600
+2026-08-22 05:56:07,209 | INFO | __main__ | Fetching ChEMBL activity data: offset=17100 limit=100
+2026-08-22 05:56:07,975 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:07,976 | INFO | __main__ | Collected 17200 records / 26600
+2026-08-22 05:56:08,177 | INFO | __main__ | Fetching ChEMBL activity data: offset=17200 limit=100
+2026-08-22 05:56:08,887 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:08,889 | INFO | __main__ | Collected 17300 records / 26600
+2026-08-22 05:56:09,090 | INFO | __main__ | Fetching ChEMBL activity data: offset=17300 limit=100
+2026-08-22 05:56:09,800 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:09,802 | INFO | __main__ | Collected 17400 records / 26600
+2026-08-22 05:56:10,002 | INFO | __main__ | Fetching ChEMBL activity data: offset=17400 limit=100
+2026-08-22 05:56:10,659 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:10,660 | INFO | __main__ | Collected 17500 records / 26600
+2026-08-22 05:56:10,860 | INFO | __main__ | Fetching ChEMBL activity data: offset=17500 limit=100
+2026-08-22 05:56:11,565 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:11,566 | INFO | __main__ | Collected 17600 records / 26600
+2026-08-22 05:56:11,767 | INFO | __main__ | Fetching ChEMBL activity data: offset=17600 limit=100
+2026-08-22 05:56:12,526 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:12,527 | INFO | __main__ | Collected 17700 records / 26600
+2026-08-22 05:56:12,728 | INFO | __main__ | Fetching ChEMBL activity data: offset=17700 limit=100
+2026-08-22 05:56:13,433 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:13,435 | INFO | __main__ | Collected 17800 records / 26600
+2026-08-22 05:56:13,636 | INFO | __main__ | Fetching ChEMBL activity data: offset=17800 limit=100
+2026-08-22 05:56:14,442 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:14,443 | INFO | __main__ | Collected 17900 records / 26600
+2026-08-22 05:56:14,644 | INFO | __main__ | Fetching ChEMBL activity data: offset=17900 limit=100
+2026-08-22 05:56:15,716 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:15,717 | INFO | __main__ | Collected 18000 records / 26600
+2026-08-22 05:56:15,917 | INFO | __main__ | Fetching ChEMBL activity data: offset=18000 limit=100
+2026-08-22 05:56:17,455 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:17,456 | INFO | __main__ | Collected 18100 records / 26600
+2026-08-22 05:56:17,657 | INFO | __main__ | Fetching ChEMBL activity data: offset=18100 limit=100
+2026-08-22 05:56:18,472 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:18,473 | INFO | __main__ | Collected 18200 records / 26600
+2026-08-22 05:56:18,673 | INFO | __main__ | Fetching ChEMBL activity data: offset=18200 limit=100
+2026-08-22 05:56:19,282 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:19,283 | INFO | __main__ | Collected 18300 records / 26600
+2026-08-22 05:56:19,484 | INFO | __main__ | Fetching ChEMBL activity data: offset=18300 limit=100
+2026-08-22 05:56:20,114 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:20,116 | INFO | __main__ | Collected 18400 records / 26600
+2026-08-22 05:56:20,316 | INFO | __main__ | Fetching ChEMBL activity data: offset=18400 limit=100
+2026-08-22 05:56:21,115 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:21,116 | INFO | __main__ | Collected 18500 records / 26600
+2026-08-22 05:56:21,317 | INFO | __main__ | Fetching ChEMBL activity data: offset=18500 limit=100
+2026-08-22 05:56:22,113 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:22,115 | INFO | __main__ | Collected 18600 records / 26600
+2026-08-22 05:56:22,315 | INFO | __main__ | Fetching ChEMBL activity data: offset=18600 limit=100
+2026-08-22 05:56:22,967 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:22,968 | INFO | __main__ | Collected 18700 records / 26600
+2026-08-22 05:56:23,169 | INFO | __main__ | Fetching ChEMBL activity data: offset=18700 limit=100
+2026-08-22 05:56:23,832 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:23,833 | INFO | __main__ | Collected 18800 records / 26600
+2026-08-22 05:56:24,033 | INFO | __main__ | Fetching ChEMBL activity data: offset=18800 limit=100
+2026-08-22 05:56:24,731 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:24,733 | INFO | __main__ | Collected 18900 records / 26600
+2026-08-22 05:56:24,934 | INFO | __main__ | Fetching ChEMBL activity data: offset=18900 limit=100
+2026-08-22 05:56:26,443 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:26,450 | INFO | __main__ | Collected 19000 records / 26600
+2026-08-22 05:56:26,651 | INFO | __main__ | Fetching ChEMBL activity data: offset=19000 limit=100
+2026-08-22 05:56:27,289 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:27,291 | INFO | __main__ | Collected 19100 records / 26600
+2026-08-22 05:56:27,492 | INFO | __main__ | Fetching ChEMBL activity data: offset=19100 limit=100
+2026-08-22 05:56:28,496 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:28,498 | INFO | __main__ | Collected 19200 records / 26600
+2026-08-22 05:56:28,699 | INFO | __main__ | Fetching ChEMBL activity data: offset=19200 limit=100
+2026-08-22 05:56:29,321 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:29,322 | INFO | __main__ | Collected 19300 records / 26600
+2026-08-22 05:56:29,524 | INFO | __main__ | Fetching ChEMBL activity data: offset=19300 limit=100
+2026-08-22 05:56:30,122 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:30,125 | INFO | __main__ | Collected 19400 records / 26600
+2026-08-22 05:56:30,326 | INFO | __main__ | Fetching ChEMBL activity data: offset=19400 limit=100
+2026-08-22 05:56:31,066 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:31,068 | INFO | __main__ | Collected 19500 records / 26600
+2026-08-22 05:56:31,269 | INFO | __main__ | Fetching ChEMBL activity data: offset=19500 limit=100
+2026-08-22 05:56:31,885 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:31,887 | INFO | __main__ | Collected 19600 records / 26600
+2026-08-22 05:56:32,088 | INFO | __main__ | Fetching ChEMBL activity data: offset=19600 limit=100
+2026-08-22 05:56:32,692 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:32,694 | INFO | __main__ | Collected 19700 records / 26600
+2026-08-22 05:56:32,895 | INFO | __main__ | Fetching ChEMBL activity data: offset=19700 limit=100
+2026-08-22 05:56:33,705 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:33,708 | INFO | __main__ | Collected 19800 records / 26600
+2026-08-22 05:56:33,908 | INFO | __main__ | Fetching ChEMBL activity data: offset=19800 limit=100
+2026-08-22 05:56:34,681 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:34,682 | INFO | __main__ | Collected 19900 records / 26600
+2026-08-22 05:56:34,882 | INFO | __main__ | Fetching ChEMBL activity data: offset=19900 limit=100
+2026-08-22 05:56:36,072 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:36,074 | INFO | __main__ | Collected 20000 records / 26600
+2026-08-22 05:56:36,275 | INFO | __main__ | Fetching ChEMBL activity data: offset=20000 limit=100
+2026-08-22 05:56:37,202 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:37,204 | INFO | __main__ | Collected 20100 records / 26600
+2026-08-22 05:56:37,405 | INFO | __main__ | Fetching ChEMBL activity data: offset=20100 limit=100
+2026-08-22 05:56:38,091 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:38,093 | INFO | __main__ | Collected 20200 records / 26600
+2026-08-22 05:56:38,294 | INFO | __main__ | Fetching ChEMBL activity data: offset=20200 limit=100
+2026-08-22 05:56:39,689 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:39,691 | INFO | __main__ | Collected 20300 records / 26600
+2026-08-22 05:56:39,891 | INFO | __main__ | Fetching ChEMBL activity data: offset=20300 limit=100
+2026-08-22 05:56:40,618 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:40,620 | INFO | __main__ | Collected 20400 records / 26600
+2026-08-22 05:56:40,821 | INFO | __main__ | Fetching ChEMBL activity data: offset=20400 limit=100
+2026-08-22 05:56:41,365 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:41,368 | INFO | __main__ | Collected 20500 records / 26600
+2026-08-22 05:56:41,569 | INFO | __main__ | Fetching ChEMBL activity data: offset=20500 limit=100
+2026-08-22 05:56:42,402 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:42,403 | INFO | __main__ | Collected 20600 records / 26600
+2026-08-22 05:56:42,604 | INFO | __main__ | Fetching ChEMBL activity data: offset=20600 limit=100
+2026-08-22 05:56:43,485 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:43,486 | INFO | __main__ | Collected 20700 records / 26600
+2026-08-22 05:56:43,687 | INFO | __main__ | Fetching ChEMBL activity data: offset=20700 limit=100
+2026-08-22 05:56:44,242 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:44,244 | INFO | __main__ | Collected 20800 records / 26600
+2026-08-22 05:56:44,444 | INFO | __main__ | Fetching ChEMBL activity data: offset=20800 limit=100
+2026-08-22 05:56:45,031 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:45,033 | INFO | __main__ | Collected 20900 records / 26600
+2026-08-22 05:56:45,233 | INFO | __main__ | Fetching ChEMBL activity data: offset=20900 limit=100
+2026-08-22 05:56:46,255 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:46,257 | INFO | __main__ | Collected 21000 records / 26600
+2026-08-22 05:56:46,457 | INFO | __main__ | Fetching ChEMBL activity data: offset=21000 limit=100
+2026-08-22 05:56:47,471 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:47,474 | INFO | __main__ | Collected 21100 records / 26600
+2026-08-22 05:56:47,674 | INFO | __main__ | Fetching ChEMBL activity data: offset=21100 limit=100
+2026-08-22 05:56:50,151 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:50,154 | INFO | __main__ | Collected 21200 records / 26600
+2026-08-22 05:56:50,354 | INFO | __main__ | Fetching ChEMBL activity data: offset=21200 limit=100
+2026-08-22 05:56:51,751 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:51,753 | INFO | __main__ | Collected 21300 records / 26600
+2026-08-22 05:56:51,953 | INFO | __main__ | Fetching ChEMBL activity data: offset=21300 limit=100
+2026-08-22 05:56:52,780 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:52,782 | INFO | __main__ | Collected 21400 records / 26600
+2026-08-22 05:56:52,982 | INFO | __main__ | Fetching ChEMBL activity data: offset=21400 limit=100
+2026-08-22 05:56:53,806 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:53,807 | INFO | __main__ | Collected 21500 records / 26600
+2026-08-22 05:56:54,008 | INFO | __main__ | Fetching ChEMBL activity data: offset=21500 limit=100
+2026-08-22 05:56:54,599 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:54,600 | INFO | __main__ | Collected 21600 records / 26600
+2026-08-22 05:56:54,800 | INFO | __main__ | Fetching ChEMBL activity data: offset=21600 limit=100
+2026-08-22 05:56:55,652 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:55,654 | INFO | __main__ | Collected 21700 records / 26600
+2026-08-22 05:56:55,855 | INFO | __main__ | Fetching ChEMBL activity data: offset=21700 limit=100
+2026-08-22 05:56:56,800 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:56,801 | INFO | __main__ | Collected 21800 records / 26600
+2026-08-22 05:56:57,002 | INFO | __main__ | Fetching ChEMBL activity data: offset=21800 limit=100
+2026-08-22 05:56:57,761 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:57,762 | INFO | __main__ | Collected 21900 records / 26600
+2026-08-22 05:56:57,962 | INFO | __main__ | Fetching ChEMBL activity data: offset=21900 limit=100
+2026-08-22 05:56:59,152 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:56:59,154 | INFO | __main__ | Collected 22000 records / 26600
+2026-08-22 05:56:59,355 | INFO | __main__ | Fetching ChEMBL activity data: offset=22000 limit=100
+2026-08-22 05:57:00,288 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:00,290 | INFO | __main__ | Collected 22100 records / 26600
+2026-08-22 05:57:00,490 | INFO | __main__ | Fetching ChEMBL activity data: offset=22100 limit=100
+2026-08-22 05:57:01,154 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:01,155 | INFO | __main__ | Collected 22200 records / 26600
+2026-08-22 05:57:01,356 | INFO | __main__ | Fetching ChEMBL activity data: offset=22200 limit=100
+2026-08-22 05:57:01,976 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:01,979 | INFO | __main__ | Collected 22300 records / 26600
+2026-08-22 05:57:02,179 | INFO | __main__ | Fetching ChEMBL activity data: offset=22300 limit=100
+2026-08-22 05:57:03,331 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:03,333 | INFO | __main__ | Collected 22400 records / 26600
+2026-08-22 05:57:03,534 | INFO | __main__ | Fetching ChEMBL activity data: offset=22400 limit=100
+2026-08-22 05:57:04,079 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:04,081 | INFO | __main__ | Collected 22500 records / 26600
+2026-08-22 05:57:04,283 | INFO | __main__ | Fetching ChEMBL activity data: offset=22500 limit=100
+2026-08-22 05:57:04,952 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:04,954 | INFO | __main__ | Collected 22600 records / 26600
+2026-08-22 05:57:05,155 | INFO | __main__ | Fetching ChEMBL activity data: offset=22600 limit=100
+2026-08-22 05:57:05,827 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:05,830 | INFO | __main__ | Collected 22700 records / 26600
+2026-08-22 05:57:06,031 | INFO | __main__ | Fetching ChEMBL activity data: offset=22700 limit=100
+2026-08-22 05:57:06,610 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:06,611 | INFO | __main__ | Collected 22800 records / 26600
+2026-08-22 05:57:06,812 | INFO | __main__ | Fetching ChEMBL activity data: offset=22800 limit=100
+2026-08-22 05:57:07,514 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:07,516 | INFO | __main__ | Collected 22900 records / 26600
+2026-08-22 05:57:07,716 | INFO | __main__ | Fetching ChEMBL activity data: offset=22900 limit=100
+2026-08-22 05:57:08,804 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:08,806 | INFO | __main__ | Collected 23000 records / 26600
+2026-08-22 05:57:09,006 | INFO | __main__ | Fetching ChEMBL activity data: offset=23000 limit=100
+2026-08-22 05:57:09,728 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:09,729 | INFO | __main__ | Collected 23100 records / 26600
+2026-08-22 05:57:09,930 | INFO | __main__ | Fetching ChEMBL activity data: offset=23100 limit=100
+2026-08-22 05:57:10,891 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:10,893 | INFO | __main__ | Collected 23200 records / 26600
+2026-08-22 05:57:11,094 | INFO | __main__ | Fetching ChEMBL activity data: offset=23200 limit=100
+2026-08-22 05:57:11,855 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:11,857 | INFO | __main__ | Collected 23300 records / 26600
+2026-08-22 05:57:12,058 | INFO | __main__ | Fetching ChEMBL activity data: offset=23300 limit=100
+2026-08-22 05:57:12,930 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:12,931 | INFO | __main__ | Collected 23400 records / 26600
+2026-08-22 05:57:13,132 | INFO | __main__ | Fetching ChEMBL activity data: offset=23400 limit=100
+2026-08-22 05:57:14,051 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:14,053 | INFO | __main__ | Collected 23500 records / 26600
+2026-08-22 05:57:14,253 | INFO | __main__ | Fetching ChEMBL activity data: offset=23500 limit=100
+2026-08-22 05:57:15,276 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:15,278 | INFO | __main__ | Collected 23600 records / 26600
+2026-08-22 05:57:15,478 | INFO | __main__ | Fetching ChEMBL activity data: offset=23600 limit=100
+2026-08-22 05:57:16,593 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:16,596 | INFO | __main__ | Collected 23700 records / 26600
+2026-08-22 05:57:16,796 | INFO | __main__ | Fetching ChEMBL activity data: offset=23700 limit=100
+2026-08-22 05:57:17,633 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:17,635 | INFO | __main__ | Collected 23800 records / 26600
+2026-08-22 05:57:17,835 | INFO | __main__ | Fetching ChEMBL activity data: offset=23800 limit=100
+2026-08-22 05:57:18,490 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:18,492 | INFO | __main__ | Collected 23900 records / 26600
+2026-08-22 05:57:18,692 | INFO | __main__ | Fetching ChEMBL activity data: offset=23900 limit=100
+2026-08-22 05:57:21,075 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:21,077 | INFO | __main__ | Collected 24000 records / 26600
+2026-08-22 05:57:21,278 | INFO | __main__ | Fetching ChEMBL activity data: offset=24000 limit=100
+2026-08-22 05:57:22,011 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:22,013 | INFO | __main__ | Collected 24100 records / 26600
+2026-08-22 05:57:22,214 | INFO | __main__ | Fetching ChEMBL activity data: offset=24100 limit=100
+2026-08-22 05:57:22,998 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:23,000 | INFO | __main__ | Collected 24200 records / 26600
+2026-08-22 05:57:23,201 | INFO | __main__ | Fetching ChEMBL activity data: offset=24200 limit=100
+2026-08-22 05:57:23,952 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:23,954 | INFO | __main__ | Collected 24300 records / 26600
+2026-08-22 05:57:24,154 | INFO | __main__ | Fetching ChEMBL activity data: offset=24300 limit=100
+2026-08-22 05:57:24,930 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:24,932 | INFO | __main__ | Collected 24400 records / 26600
+2026-08-22 05:57:25,133 | INFO | __main__ | Fetching ChEMBL activity data: offset=24400 limit=100
+2026-08-22 05:57:25,654 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:25,655 | INFO | __main__ | Collected 24500 records / 26600
+2026-08-22 05:57:25,856 | INFO | __main__ | Fetching ChEMBL activity data: offset=24500 limit=100
+2026-08-22 05:57:26,436 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:26,437 | INFO | __main__ | Collected 24600 records / 26600
+2026-08-22 05:57:26,638 | INFO | __main__ | Fetching ChEMBL activity data: offset=24600 limit=100
+2026-08-22 05:57:27,133 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:27,135 | INFO | __main__ | Collected 24700 records / 26600
+2026-08-22 05:57:27,336 | INFO | __main__ | Fetching ChEMBL activity data: offset=24700 limit=100
+2026-08-22 05:57:28,148 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:28,151 | INFO | __main__ | Collected 24800 records / 26600
+2026-08-22 05:57:28,352 | INFO | __main__ | Fetching ChEMBL activity data: offset=24800 limit=100
+2026-08-22 05:57:30,926 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:30,927 | INFO | __main__ | Collected 24900 records / 26600
+2026-08-22 05:57:31,128 | INFO | __main__ | Fetching ChEMBL activity data: offset=24900 limit=100
+2026-08-22 05:57:32,205 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:32,207 | INFO | __main__ | Collected 25000 records / 26600
+2026-08-22 05:57:32,407 | INFO | __main__ | Fetching ChEMBL activity data: offset=25000 limit=100
+2026-08-22 05:57:33,538 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:33,540 | INFO | __main__ | Collected 25100 records / 26600
+2026-08-22 05:57:33,740 | INFO | __main__ | Fetching ChEMBL activity data: offset=25100 limit=100
+2026-08-22 05:57:34,256 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:34,258 | INFO | __main__ | Collected 25200 records / 26600
+2026-08-22 05:57:34,458 | INFO | __main__ | Fetching ChEMBL activity data: offset=25200 limit=100
+2026-08-22 05:57:34,931 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:34,933 | INFO | __main__ | Collected 25300 records / 26600
+2026-08-22 05:57:35,134 | INFO | __main__ | Fetching ChEMBL activity data: offset=25300 limit=100
+2026-08-22 05:57:35,812 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:35,814 | INFO | __main__ | Collected 25400 records / 26600
+2026-08-22 05:57:36,015 | INFO | __main__ | Fetching ChEMBL activity data: offset=25400 limit=100
+2026-08-22 05:57:36,797 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:36,799 | INFO | __main__ | Collected 25500 records / 26600
+2026-08-22 05:57:37,000 | INFO | __main__ | Fetching ChEMBL activity data: offset=25500 limit=100
+2026-08-22 05:57:37,972 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:37,973 | INFO | __main__ | Collected 25600 records / 26600
+2026-08-22 05:57:38,174 | INFO | __main__ | Fetching ChEMBL activity data: offset=25600 limit=100
+2026-08-22 05:57:39,040 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:39,042 | INFO | __main__ | Collected 25700 records / 26600
+2026-08-22 05:57:39,243 | INFO | __main__ | Fetching ChEMBL activity data: offset=25700 limit=100
+2026-08-22 05:57:40,281 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:40,284 | INFO | __main__ | Collected 25800 records / 26600
+2026-08-22 05:57:40,485 | INFO | __main__ | Fetching ChEMBL activity data: offset=25800 limit=100
+2026-08-22 05:57:41,473 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:41,475 | INFO | __main__ | Collected 25900 records / 26600
+2026-08-22 05:57:41,675 | INFO | __main__ | Fetching ChEMBL activity data: offset=25900 limit=100
+2026-08-22 05:57:42,991 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:42,993 | INFO | __main__ | Collected 26000 records / 26600
+2026-08-22 05:57:43,194 | INFO | __main__ | Fetching ChEMBL activity data: offset=26000 limit=100
+2026-08-22 05:57:44,016 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:44,017 | INFO | __main__ | Collected 26100 records / 26600
+2026-08-22 05:57:44,217 | INFO | __main__ | Fetching ChEMBL activity data: offset=26100 limit=100
+2026-08-22 05:57:44,793 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:44,795 | INFO | __main__ | Collected 26200 records / 26600
+2026-08-22 05:57:44,995 | INFO | __main__ | Fetching ChEMBL activity data: offset=26200 limit=100
+2026-08-22 05:57:47,002 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:47,005 | INFO | __main__ | Collected 26300 records / 26600
+2026-08-22 05:57:47,205 | INFO | __main__ | Fetching ChEMBL activity data: offset=26300 limit=100
+2026-08-22 05:57:47,738 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:47,740 | INFO | __main__ | Collected 26400 records / 26600
+2026-08-22 05:57:47,940 | INFO | __main__ | Fetching ChEMBL activity data: offset=26400 limit=100
+2026-08-22 05:57:48,598 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:48,600 | INFO | __main__ | Collected 26500 records / 26600
+2026-08-22 05:57:48,801 | INFO | __main__ | Fetching ChEMBL activity data: offset=26500 limit=100
+2026-08-22 05:57:49,360 | INFO | __main__ | ChEMBL response status: 200
+2026-08-22 05:57:49,363 | INFO | __main__ | Collected 26600 records / 26600
+2026-08-22 05:57:49,570 | INFO | __main__ | Raw dataframe shape: (26600, 47)
+2026-08-22 05:57:49,572 | INFO | __main__ | Columns returned:
+['action_type', 'activity_comment', 'activity_id', 'activity_properties', 'assay_chembl_id', 'assay_description', 'assay_type', 'assay_variant_accession', 'assay_variant_mutation', 'bao_endpoint', 'bao_format', 'bao_label', 'canonical_smiles', 'data_validity_comment', 'data_validity_description', 'document_chembl_id', 'document_journal', 'document_year', 'ligand_efficiency', 'modality', 'molecule_chembl_id', 'molecule_pref_name', 'parent_molecule_chembl_id', 'pchembl_value', 'potential_duplicate', 'qudt_units', 'record_id', 'relation', 'src_id', 'standard_flag', 'standard_relation', 'standard_text_value', 'standard_type', 'standard_units', 'standard_upper_value', 'standard_value', 'target_chembl_id', 'target_organism', 'target_pref_name', 'target_tax_id', 'text_value', 'toid', 'type', 'units', 'uo_units', 'upper_value', 'value']
+2026-08-22 05:57:49,949 | INFO | __main__ | Raw dataset saved to C:\Users\sintu\Desktop\drug-bioactivity-predictor\data\raw\egfr_ic50_raw.csv
