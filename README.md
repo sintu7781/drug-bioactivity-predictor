@@ -73,3 +73,7 @@ The prediction is formulated as a binary classification problem.
 IC50 <= 1000 nM  → ACTIVE
 IC50 > 1000 nM   → INACTIVE
 ```
+
+## 🌐 Streamlit Application
+
+https://drug-bioactivity-predictor.streamlit.app/
