@@ -25,6 +25,16 @@ An end-to-end cheminformatics and machine-learning pipeline for predicting **EGF
 
 ---
 
+## 🔗 Project Links
+
+| Resource       | Link                                                                         |
+| -------------- | ---------------------------------------------------------------------------- |
+| 🚀 Live Demo   | [Streamlit Application](https://drug-bioactivity-predictor.streamlit.app/)   |
+| 💻 Source Code | [GitHub Repository](https://github.com/sintu7781/drug-bioactivity-predictor) |
+| 🤗 Model       | [Hugging Face](https://huggingface.co/prime7781/drug-bioactivity-predictor)  |
+
+---
+
 ## 🌐 Application Preview
 
 ![Drug Bioactivity Predictor](docs/streamlit-preview.png)
