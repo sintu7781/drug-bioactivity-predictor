@@ -12,6 +12,23 @@ An end-to-end cheminformatics and machine-learning pipeline for predicting **EGF
 
 </p>
 
+<p align="center">
+
+[![Python](https://img.shields.io/badge/Python-3.14-blue.svg)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.61.1-red.svg)](https://streamlit.io/)
+[![RDKit](https://img.shields.io/badge/RDKit-Cheminformatics-green.svg)](https://www.rdkit.org/)
+[![Tests](https://img.shields.io/badge/tests-15%20passed-brightgreen.svg)](#testing)
+[![Ruff](https://img.shields.io/badge/code%20quality-Ruff-purple.svg)](https://docs.astral.sh/ruff/)
+[![License](https://img.shields.io/badge/license-to%20be%20added-lightgrey.svg)](#license)
+
+</p>
+
+---
+
+## 🌐 Application Preview
+
+![Drug Bioactivity Predictor](docs/streamlit-preview.png)
+
 ---
 
 ## 📌 Overview
@@ -32,6 +49,7 @@ The project combines:
 - Production inference
 - Automated testing
 - Code-quality checks
+- GitHub Actions CI
 - Hugging Face model hosting
 - Streamlit deployment
 
@@ -55,7 +73,3 @@ The prediction is formulated as a binary classification problem.
 IC50 <= 1000 nM  → ACTIVE
 IC50 > 1000 nM   → INACTIVE
 ```
-
-## 🌐 Application Preview
-
-![Drug Bioactivity Predictor](docs/streamlit-preview.png)
